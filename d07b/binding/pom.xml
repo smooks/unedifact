@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.milyn.edi</groupId>
+        <artifactId>edi-gen</artifactId>
+        <version>1.4-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+    </parent>
+    <name>Smooks EDI - UN/EDIFACT - D07B - Bindings</name>
+    <groupId>org.milyn.edi.unedifact</groupId>
+    <artifactId>d07b-binding</artifactId>
+    <version>${d07b.version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.milyn.edi.unedifact</groupId>
+            <artifactId>d07b-mapping</artifactId>
+            <version>${d07b.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.milyn</groupId>
+                <artifactId>maven-ejc-plugin</artifactId>
+                <version>1.4-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+                <configuration>
+                    <ediMappingFile>urn:org.milyn.edi.unedifact:d07b-mapping:${d07b.version}</ediMappingFile>
+                </configuration>
+                <executions>
+                    <execution><goals><goal>generate</goal></goals></execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.milyn.edi.unedifact</groupId>
+                        <artifactId>d07b-mapping</artifactId>
+                        <version>${d07b.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.milyn.edi</groupId>
+        <artifactId>edi-gen</artifactId>
+        <version>1.4-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+    </parent>
+    <groupId>org.milyn.edi.unedifact</groupId>
+    <artifactId>d03b-test</artifactId>
+    <name>Smooks EDI - UN/EDIFACT - D03B - Tests</name>
+    <version>${d03b.version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.milyn.edi.unedifact</groupId>
+            <artifactId>d03b-binding</artifactId>
+            <version>${d03b.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
