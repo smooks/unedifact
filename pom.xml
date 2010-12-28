@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.milyn.edi</groupId>
+    <artifactId>edi-gen</artifactId>
+    <packaging>pom</packaging>
+    <version>1.4-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+    <name>Milyn Smooks EDI Generation</name>
+
+    <properties>
+        <smooks.version>1.4-SNAPSHOT</smooks.version> <!-- ## Smooks Version ## -->
+
+        <edi.gen.version>${smooks.version}</edi.gen.version>
+
+        <!-- UN/EDIFACT versions... -->
+        <d93a.version>${edi.gen.version}</d93a.version>
+        <d94a.version>${edi.gen.version}</d94a.version>
+        <d94b.version>${edi.gen.version}</d94b.version>
+        <d95a.version>${edi.gen.version}</d95a.version>
+        <d95b.version>${edi.gen.version}</d95b.version>
+        <d96a.version>${edi.gen.version}</d96a.version>
+        <d96b.version>${edi.gen.version}</d96b.version>
+        <d97a.version>${edi.gen.version}</d97a.version>
+        <d97b.version>${edi.gen.version}</d97b.version>
+        <d98a.version>${edi.gen.version}</d98a.version>
+        <d98b.version>${edi.gen.version}</d98b.version>
+        <d99a.version>${edi.gen.version}</d99a.version>
+        <d99b.version>${edi.gen.version}</d99b.version>
+        <d00a.version>${edi.gen.version}</d00a.version>
+        <d00b.version>${edi.gen.version}</d00b.version>
+        <d01a.version>${edi.gen.version}</d01a.version>
+        <d01b.version>${edi.gen.version}</d01b.version>
+        <d01c.version>${edi.gen.version}</d01c.version>
+        <d02a.version>${edi.gen.version}</d02a.version>
+        <d02b.version>${edi.gen.version}</d02b.version>
+        <d03a.version>${edi.gen.version}</d03a.version>
+        <d03b.version>${edi.gen.version}</d03b.version>
+        <d04a.version>${edi.gen.version}</d04a.version>
+        <d04b.version>${edi.gen.version}</d04b.version>
+        <d05a.version>${edi.gen.version}</d05a.version>
+        <d05b.version>${edi.gen.version}</d05b.version>
+        <d06a.version>${edi.gen.version}</d06a.version>
+        <d06b.version>${edi.gen.version}</d06b.version>
+        <d07a.version>${edi.gen.version}</d07a.version>
+        <d07b.version>${edi.gen.version}</d07b.version>
+        <d08a.version>${edi.gen.version}</d08a.version>
+        <d08b.version>${edi.gen.version}</d08b.version>
+        <d09a.version>${edi.gen.version}</d09a.version>
+        <d09b.version>${edi.gen.version}</d09b.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+			<groupId>org.milyn</groupId>
+			<artifactId>milyn-smooks-edi</artifactId>
+			<version>${smooks.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-ect</artifactId>
+            <version>${smooks.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-ejc</artifactId>
+            <version>${smooks.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>testres</artifactId>
+            <version>${smooks.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>codehaus.maven.repo</id>
+            <name>Milyn Central Maven2 Repository</name>
+            <url>dav:https://dav.codehaus.org/repository/milyn/</url>
+        </repository>
+        <snapshotRepository>
+            <id>codehaus.maven.repo</id>
+            <name>Milyn Central Maven2 SNAPSHOT Repository</name>
+            <url>dav:https://dav.codehaus.org/snapshots.repository/milyn/</url>
+        </snapshotRepository>
+        <site>
+            <id>codehaus.maven.repo</id>
+            <url>dav:https://dav.codehaus.org/xfire/</url>
+        </site>
+    </distributionManagement>
+
+</project>
