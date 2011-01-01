@@ -47,3 +47,6 @@ do
         build_set $directory
     fi
 done
+
+DEPLOY="no"
+exec_mvn examples

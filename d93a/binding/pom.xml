@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.milyn.edi</groupId>
-        <artifactId>edi-gen</artifactId>
-        <version>1.4-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <artifactId>unedifact-gen</artifactId>
+        <version>1.4</version> <!-- base pom version - do not remove this comment -->
     </parent>
     <name>Smooks EDI - UN/EDIFACT - D93A - Bindings</name>
     <groupId>org.milyn.edi.unedifact</groupId>
@@ -25,7 +25,7 @@
             <plugin>
                 <groupId>org.milyn</groupId>
                 <artifactId>maven-ejc-plugin</artifactId>
-                <version>1.4-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+                <version>1.4</version> <!-- base pom version - do not remove this comment -->
                 <configuration>
                     <ediMappingFile>urn:org.milyn.edi.unedifact:d93a-mapping:${d93a.version}</ediMappingFile>
                 </configuration>

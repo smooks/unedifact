@@ -29,3 +29,5 @@ do
         build_set $directory
     fi
 done
+
+exec_mvn examples

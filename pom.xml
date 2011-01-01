@@ -3,51 +3,49 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.milyn.edi</groupId>
-    <artifactId>edi-gen</artifactId>
+    <artifactId>unedifact-gen</artifactId>
     <packaging>pom</packaging>
-    <version>1.4-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+    <version>1.4</version> <!-- base pom version - do not remove this comment -->
     <name>Milyn Smooks EDI Generation</name>
 
     <properties>
-        <smooks.version>1.4-SNAPSHOT</smooks.version> <!-- ## Smooks Version ## -->
-
-        <edi.gen.version>${smooks.version}</edi.gen.version>
+        <smooks.version>1.4</smooks.version> <!-- ## Smooks Version ## -->
 
         <!-- UN/EDIFACT versions... -->
-        <d93a.version>${edi.gen.version}</d93a.version>
-        <d94a.version>${edi.gen.version}</d94a.version>
-        <d94b.version>${edi.gen.version}</d94b.version>
-        <d95a.version>${edi.gen.version}</d95a.version>
-        <d95b.version>${edi.gen.version}</d95b.version>
-        <d96a.version>${edi.gen.version}</d96a.version>
-        <d96b.version>${edi.gen.version}</d96b.version>
-        <d97a.version>${edi.gen.version}</d97a.version>
-        <d97b.version>${edi.gen.version}</d97b.version>
-        <d98a.version>${edi.gen.version}</d98a.version>
-        <d98b.version>${edi.gen.version}</d98b.version>
-        <d99a.version>${edi.gen.version}</d99a.version>
-        <d99b.version>${edi.gen.version}</d99b.version>
-        <d00a.version>${edi.gen.version}</d00a.version>
-        <d00b.version>${edi.gen.version}</d00b.version>
-        <d01a.version>${edi.gen.version}</d01a.version>
-        <d01b.version>${edi.gen.version}</d01b.version>
-        <d01c.version>${edi.gen.version}</d01c.version>
-        <d02a.version>${edi.gen.version}</d02a.version>
-        <d02b.version>${edi.gen.version}</d02b.version>
-        <d03a.version>${edi.gen.version}</d03a.version>
-        <d03b.version>${edi.gen.version}</d03b.version>
-        <d04a.version>${edi.gen.version}</d04a.version>
-        <d04b.version>${edi.gen.version}</d04b.version>
-        <d05a.version>${edi.gen.version}</d05a.version>
-        <d05b.version>${edi.gen.version}</d05b.version>
-        <d06a.version>${edi.gen.version}</d06a.version>
-        <d06b.version>${edi.gen.version}</d06b.version>
-        <d07a.version>${edi.gen.version}</d07a.version>
-        <d07b.version>${edi.gen.version}</d07b.version>
-        <d08a.version>${edi.gen.version}</d08a.version>
-        <d08b.version>${edi.gen.version}</d08b.version>
-        <d09a.version>${edi.gen.version}</d09a.version>
-        <d09b.version>${edi.gen.version}</d09b.version>
+        <d93a.version>${smooks.version}</d93a.version>
+        <d94a.version>${smooks.version}</d94a.version>
+        <d94b.version>${smooks.version}</d94b.version>
+        <d95a.version>${smooks.version}</d95a.version>
+        <d95b.version>${smooks.version}</d95b.version>
+        <d96a.version>${smooks.version}</d96a.version>
+        <d96b.version>${smooks.version}</d96b.version>
+        <d97a.version>${smooks.version}</d97a.version>
+        <d97b.version>${smooks.version}</d97b.version>
+        <d98a.version>${smooks.version}</d98a.version>
+        <d98b.version>${smooks.version}</d98b.version>
+        <d99a.version>${smooks.version}</d99a.version>
+        <d99b.version>${smooks.version}</d99b.version>
+        <d00a.version>${smooks.version}</d00a.version>
+        <d00b.version>${smooks.version}</d00b.version>
+        <d01a.version>${smooks.version}</d01a.version>
+        <d01b.version>${smooks.version}</d01b.version>
+        <d01c.version>${smooks.version}</d01c.version>
+        <d02a.version>${smooks.version}</d02a.version>
+        <d02b.version>${smooks.version}</d02b.version>
+        <d03a.version>${smooks.version}</d03a.version>
+        <d03b.version>${smooks.version}</d03b.version>
+        <d04a.version>${smooks.version}</d04a.version>
+        <d04b.version>${smooks.version}</d04b.version>
+        <d05a.version>${smooks.version}</d05a.version>
+        <d05b.version>${smooks.version}</d05b.version>
+        <d06a.version>${smooks.version}</d06a.version>
+        <d06b.version>${smooks.version}</d06b.version>
+        <d07a.version>${smooks.version}</d07a.version>
+        <d07b.version>${smooks.version}</d07b.version>
+        <d08a.version>${smooks.version}</d08a.version>
+        <d08b.version>${smooks.version}</d08b.version>
+        <d09a.version>${smooks.version}</d09a.version>
+        <d09b.version>${smooks.version}</d09b.version>
     </properties>
 
     <dependencies>
