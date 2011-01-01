@@ -4,7 +4,7 @@
                       xmlns:unedifact="http://www.milyn.org/xsd/smooks/unedifact-1.4.xsd">
 
 
-    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d03b-mapping:1.0" />
+    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d03b-mapping:1.4" />
     <core:filterSettings type="SAX" />
 
 </smooks-resource-list>
