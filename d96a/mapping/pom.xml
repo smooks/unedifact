@@ -6,11 +6,13 @@
         <groupId>org.milyn.edi</groupId>
         <artifactId>unedifact-gen</artifactId>
         <version>1.4</version> <!-- base pom version - do not remove this comment -->
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d96a-mapping</artifactId>
     <name>Smooks EDI - UN/EDIFACT - D96A - Mapping Model</name>
     <version>${d96a.version}</version>
+    <packaging>jar</packaging>
 
     <build>
         <plugins>
