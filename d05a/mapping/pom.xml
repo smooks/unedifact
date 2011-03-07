@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.milyn.edi</groupId>
         <artifactId>unedifact-gen</artifactId>
-        <version>1.4</version> <!-- base pom version - do not remove this comment -->
+        <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
     </parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d05a-mapping</artifactId>

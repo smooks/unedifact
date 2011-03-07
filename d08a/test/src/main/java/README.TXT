@@ -1,0 +1,1 @@
+This folder is needed for the jar plugin, which is required by the OSGi fragment "stuff".

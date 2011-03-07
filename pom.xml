@@ -5,7 +5,7 @@
     <groupId>org.milyn.edi</groupId>
     <artifactId>unedifact-gen</artifactId>
     <packaging>pom</packaging>
-    <version>1.4</version> <!-- base pom version - do not remove this comment -->
+    <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
     <name>Milyn Smooks EDI Generation</name>
 
     <properties>
@@ -53,6 +53,7 @@
 			<groupId>org.milyn</groupId>
 			<artifactId>milyn-smooks-edi</artifactId>
 			<version>${smooks.version}</version>
+            <scope>provided</scope>
 		</dependency>
         <dependency>
             <groupId>org.milyn</groupId>
@@ -64,6 +65,7 @@
             <groupId>org.milyn</groupId>
             <artifactId>milyn-smooks-ejc</artifactId>
             <version>${smooks.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.milyn</groupId>
