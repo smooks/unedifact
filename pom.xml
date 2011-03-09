@@ -9,7 +9,7 @@
     <name>Milyn Smooks EDI Generation</name>
 
     <properties>
-        <smooks.version>1.4</smooks.version> <!-- ## Smooks Version ## -->
+        <smooks.version>1.5-SNAPSHOT</smooks.version> <!-- ## Smooks Version ## -->
 
         <!-- UN/EDIFACT versions... -->
         <d93a.version>${smooks.version}</d93a.version>

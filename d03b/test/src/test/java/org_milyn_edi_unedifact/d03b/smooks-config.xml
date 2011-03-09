@@ -3,8 +3,7 @@
                       xmlns:core="http://www.milyn.org/xsd/smooks/smooks-core-1.3.xsd"
                       xmlns:unedifact="http://www.milyn.org/xsd/smooks/unedifact-1.4.xsd">
 
-
-    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d03b-mapping:1.4" />
+    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d03b-mapping:1.5-SNAPSHOT" />
     <core:filterSettings type="SAX" />
 
 </smooks-resource-list>
