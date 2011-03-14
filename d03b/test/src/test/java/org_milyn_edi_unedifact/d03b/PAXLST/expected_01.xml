@@ -1,213 +1,213 @@
-<h:unEdifact xmlns:h="http://www.milyn.org/schema/edi/un/header-4.1.xsd">
-	<h:UNB xmlns:h="http://www.milyn.org/schema/edi/un/header-4.1.xsd">
-		<h:syntaxIdentifier>
-			<h:id>UNOA</h:id>
-			<h:versionNum>4</h:versionNum>
-		</h:syntaxIdentifier>
-		<h:sender>
-			<h:id>LOCK</h:id>
-			<h:codeQualifier>02</h:codeQualifier>
-		</h:sender>
-		<h:recipient>
-			<h:id>CBP-ACE-TEST</h:id>
-			<h:codeQualifier>02</h:codeQualifier>
-		</h:recipient>
-		<h:dateTime>
-			<h:date>041013</h:date>
-			<h:time>1901</h:time>
-		</h:dateTime>
-		<h:controlRef>16</h:controlRef>
-		<h:recipientRef>
-		</h:recipientRef>
-		<h:applicationRef>ACE</h:applicationRef>
-	</h:UNB>
-	<h:group xmlns:h="http://www.milyn.org/schema/edi/un/header-4.1.xsd">
-		<h:UNG>
-			<h:groupId>PAXLST</h:groupId>
-			<h:senderApp>
-				<h:id>LOCK</h:id>
-				<h:codeQualifier>02</h:codeQualifier>
-			</h:senderApp>
-			<h:recipientApp>
-				<h:id>CBP-A+CE-TEST</h:id>
-				<h:codeQualifier>02</h:codeQualifier>
-			</h:recipientApp>
-			<h:dateTime>
-				<h:date>041013</h:date>
-				<h:time>1901</h:time>
-			</h:dateTime>
-			<h:groupRef>16</h:groupRef>
-			<h:controllingAgencyCode>UN</h:controllingAgencyCode>
-			<h:messageVersion>
-				<h:versionNum>D</h:versionNum>
-				<h:releaseNum>03B</h:releaseNum>
-			</h:messageVersion>
-		</h:UNG>
-		<h:interchangeMessage>
-			<h:UNH>
-				<h:messageRefNum>PAXLST16</h:messageRefNum>
-				<h:messageIdentifier>
-					<h:id>PAXLST</h:id>
-					<h:versionNum>D</h:versionNum>
-					<h:releaseNum>03B</h:releaseNum>
-					<h:controllingAgencyCode>UN</h:controllingAgencyCode>
-				</h:messageIdentifier>
-			</h:UNH>
-			<ns1:PAXLST xmlns:ns1="http://www.milyn.org/schema/edi/un/d03b/paxlst.xsd">
-				<ns1:Beginning_of_message>
-					<ns2:DOCUMENT_MESSAGE_NAME xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						<ns2:Document_name_code>10</ns2:Document_name_code>
-					</ns2:DOCUMENT_MESSAGE_NAME>
-					<ns2:DOCUMENT_MESSAGE_IDENTIFICATION xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						<ns2:Document_identifier>LOCKKH04103101</ns2:Document_identifier>
-					</ns2:DOCUMENT_MESSAGE_IDENTIFICATION>
-					<ns2:Message_function_code xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">4</ns2:Message_function_code>
-				</ns1:Beginning_of_message>
-				<ns1:Reference>
-					<ns2:REFERENCE xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						<ns2:Reference_code_qualifier>RFA</ns2:Reference_code_qualifier>
-						<ns2:Reference_identifier>03</ns2:Reference_identifier>
-					</ns2:REFERENCE>
-				</ns1:Reference>
-				<ns1:Segment_group_2>
-					<ns1:Transport_information>
-						<ns2:Transport_stage_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">11</ns2:Transport_stage_code_qualifier>
-						<ns2:Means_of_transport_journey_identifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd"></ns2:Means_of_transport_journey_identifier>
-						<ns2:MODE_OF_TRANSPORT xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						</ns2:MODE_OF_TRANSPORT>
-						<ns2:TRANSPORT_MEANS xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						</ns2:TRANSPORT_MEANS>
-						<ns2:CARRIER xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Carrier_identifier>LOCK</ns2:Carrier_identifier>
-							<ns2:Code_list_identification_code>172</ns2:Code_list_identification_code>
-						</ns2:CARRIER>
-					</ns1:Transport_information>
-					<ns1:Date_time_period>
-						<ns2:DATE_TIME_PERIOD xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Date_or_time_or_period_function_code_qualifier>132</ns2:Date_or_time_or_period_function_code_qualifier>
-							<ns2:Date_or_time_or_period_text>20041230</ns2:Date_or_time_or_period_text>
-							<ns2:Date_or_time_or_period_format_code>102</ns2:Date_or_time_or_period_format_code>
-						</ns2:DATE_TIME_PERIOD>
-					</ns1:Date_time_period>
-				</ns1:Segment_group_2>
-				<ns1:Segment_group_4>
-					<ns1:Name_and_address>
-						<ns2:Party_function_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">VW</ns2:Party_function_code_qualifier>
-						<ns2:PARTY_IDENTIFICATION_DETAILS xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Party_identifier>0000041153</ns2:Party_identifier>
-							<ns2:Code_list_identification_code>109</ns2:Code_list_identification_code>
-						</ns2:PARTY_IDENTIFICATION_DETAILS>
-						<ns2:NAME_AND_ADDRESS xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						</ns2:NAME_AND_ADDRESS>
-						<ns2:PARTY_NAME xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Party_name_-_-1>AOMAD</ns2:Party_name_-_-1>
-							<ns2:Party_name_-_-2>CHRIS</ns2:Party_name_-_-2>
-							<ns2:Party_name_-_-3></ns2:Party_name_-_-3>
-							<ns2:Party_name_-_-4></ns2:Party_name_-_-4>
-							<ns2:Party_name_-_-5></ns2:Party_name_-_-5>
-							<ns2:Party_name_format_code>1</ns2:Party_name_format_code>
-						</ns2:PARTY_NAME>
-						<ns2:STREET xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Street_and_number_or_post_office_box_identifier_-_-1>11107 SUNSET HILL'S ROAD</ns2:Street_and_number_or_post_office_box_identifier_-_-1>
-						</ns2:STREET>
-						<ns2:City_name xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">RESTON</ns2:City_name>
-						<ns2:COUNTRY_SUB_ENTITY_DETAILS xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Country_sub_entity_name_code>VA</ns2:Country_sub_entity_name_code>
-							<ns2:Code_list_identification_code>163</ns2:Code_list_identification_code>
-							<ns2:Code_list_responsible_agency_code>5</ns2:Code_list_responsible_agency_code>
-						</ns2:COUNTRY_SUB_ENTITY_DETAILS>
-						<ns2:Postal_identification_code xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">20190</ns2:Postal_identification_code>
-					</ns1:Name_and_address>
-					<ns1:Attribute>
-						<ns2:Attribute_function_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">2</ns2:Attribute_function_code_qualifier>
-						<ns2:ATTRIBUTE_TYPE xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						</ns2:ATTRIBUTE_TYPE>
-						<ns2:ATTRIBUTE_DETAIL xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Attribute_description_code>M*M*M*M*M</ns2:Attribute_description_code>
-						</ns2:ATTRIBUTE_DETAIL>
-					</ns1:Attribute>
-					<ns1:Date_time_period>
-						<ns2:DATE_TIME_PERIOD xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Date_or_time_or_period_function_code_qualifier>329</ns2:Date_or_time_or_period_function_code_qualifier>
-							<ns2:Date_or_time_or_period_text>19350919</ns2:Date_or_time_or_period_text>
-							<ns2:Date_or_time_or_period_format_code>102</ns2:Date_or_time_or_period_format_code>
-						</ns2:DATE_TIME_PERIOD>
-					</ns1:Date_time_period>
-					<ns1:Employment_details>
-						<ns2:Employment_details_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">4</ns2:Employment_details_code_qualifier>
-						<ns2:EMPLOYMENT_CATEGORY xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						</ns2:EMPLOYMENT_CATEGORY>
-						<ns2:OCCUPATION xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-						</ns2:OCCUPATION>
-						<ns2:QUALIFICATION_CLASSIFICATION xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Qualification_classification_description_code>1</ns2:Qualification_classification_description_code>
-						</ns2:QUALIFICATION_CLASSIFICATION>
-						<ns2:Job_title_description xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd"></ns2:Job_title_description>
-						<ns2:Qualification_application_area_code xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">8</ns2:Qualification_application_area_code>
-					</ns1:Employment_details>
-					<ns1:Nationality>
-						<ns2:Nationality_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">2</ns2:Nationality_code_qualifier>
-						<ns2:NATIONALITY_DETAILS xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-							<ns2:Nationality_name_code>US</ns2:Nationality_name_code>
-							<ns2:Code_list_identification_code></ns2:Code_list_identification_code>
-							<ns2:Code_list_responsible_agency_code>5</ns2:Code_list_responsible_agency_code>
-						</ns2:NATIONALITY_DETAILS>
-					</ns1:Nationality>
-					<ns1:Segment_group_5>
-						<ns1:Document_message_details>
-							<ns2:DOCUMENT_MESSAGE_NAME xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-								<ns2:Document_name_code>5K</ns2:Document_name_code>
-							</ns2:DOCUMENT_MESSAGE_NAME>
-							<ns2:DOCUMENT_MESSAGE_DETAILS xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-								<ns2:Document_identifier>P100971204141</ns2:Document_identifier>
-							</ns2:DOCUMENT_MESSAGE_DETAILS>
-						</ns1:Document_message_details>
-						<ns1:Place_location_identification>
-							<ns2:Location_function_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">91</ns2:Location_function_code_qualifier>
-							<ns2:LOCATION_IDENTIFICATION xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-								<ns2:Location_name_code>VA</ns2:Location_name_code>
-								<ns2:Code_list_identification_code>163</ns2:Code_list_identification_code>
-							</ns2:LOCATION_IDENTIFICATION>
-						</ns1:Place_location_identification>
-						<ns1:Place_location_identification>
-							<ns2:Location_function_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">91</ns2:Location_function_code_qualifier>
-							<ns2:LOCATION_IDENTIFICATION xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-								<ns2:Location_name_code>US</ns2:Location_name_code>
-								<ns2:Code_list_identification_code>162</ns2:Code_list_identification_code>
-							</ns2:LOCATION_IDENTIFICATION>
-						</ns1:Place_location_identification>
-					</ns1:Segment_group_5>
-					<ns1:Segment_group_5>
-						<ns1:Document_message_details>
-							<ns2:DOCUMENT_MESSAGE_NAME xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-								<ns2:Document_name_code>39</ns2:Document_name_code>
-							</ns2:DOCUMENT_MESSAGE_NAME>
-							<ns2:DOCUMENT_MESSAGE_DETAILS xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-								<ns2:Document_identifier>15504141</ns2:Document_identifier>
-							</ns2:DOCUMENT_MESSAGE_DETAILS>
-						</ns1:Document_message_details>
-						<ns1:Place_location_identification>
-							<ns2:Location_function_code_qualifier xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">91</ns2:Location_function_code_qualifier>
-							<ns2:LOCATION_IDENTIFICATION xmlns:ns2="http://www.milyn.org/schema/edi/un/d03b/common.xsd">
-								<ns2:Location_name_code>US</ns2:Location_name_code>
-								<ns2:Code_list_identification_code>162</ns2:Code_list_identification_code>
-							</ns2:LOCATION_IDENTIFICATION>
-						</ns1:Place_location_identification>
-					</ns1:Segment_group_5>
-				</ns1:Segment_group_4>
-			</ns1:PAXLST>
-			<h:UNT>
-				<h:segmentCount>16</h:segmentCount>
-				<h:messageRefNum>PAXLST16</h:messageRefNum>
-			</h:UNT>
-		</h:interchangeMessage>
-		<h:UNE>
-			<h:controlCount>1</h:controlCount>
-			<h:groupRef>16</h:groupRef>
-		</h:UNE>
-	</h:group>
-	<h:UNZ xmlns:h="http://www.milyn.org/schema/edi/un/header-4.1.xsd">
-		<h:controlCount>1</h:controlCount>
-		<h:controlRef>16</h:controlRef>
-	</h:UNZ>
-</h:unEdifact>
+<env:unEdifact xmlns:env="urn:org.milyn.edi.unedifact.v41">
+	<env:UNB xmlns:env="urn:org.milyn.edi.unedifact.v41">
+		<env:syntaxIdentifier>
+			<env:id>UNOA</env:id>
+			<env:versionNum>4</env:versionNum>
+		</env:syntaxIdentifier>
+		<env:sender>
+			<env:id>LOCK</env:id>
+			<env:codeQualifier>02</env:codeQualifier>
+		</env:sender>
+		<env:recipient>
+			<env:id>CBP-ACE-TEST</env:id>
+			<env:codeQualifier>02</env:codeQualifier>
+		</env:recipient>
+		<env:dateTime>
+			<env:date>041013</env:date>
+			<env:time>1901</env:time>
+		</env:dateTime>
+		<env:controlRef>16</env:controlRef>
+		<env:recipientRef>
+		</env:recipientRef>
+		<env:applicationRef>ACE</env:applicationRef>
+	</env:UNB>
+	<env:group xmlns:env="urn:org.milyn.edi.unedifact.v41">
+		<env:UNG>
+			<env:groupId>PAXLST</env:groupId>
+			<env:senderApp>
+				<env:id>LOCK</env:id>
+				<env:codeQualifier>02</env:codeQualifier>
+			</env:senderApp>
+			<env:recipientApp>
+				<env:id>CBP-A+CE-TEST</env:id>
+				<env:codeQualifier>02</env:codeQualifier>
+			</env:recipientApp>
+			<env:dateTime>
+				<env:date>041013</env:date>
+				<env:time>1901</env:time>
+			</env:dateTime>
+			<env:groupRef>16</env:groupRef>
+			<env:controllingAgencyCode>UN</env:controllingAgencyCode>
+			<env:messageVersion>
+				<env:versionNum>D</env:versionNum>
+				<env:releaseNum>03B</env:releaseNum>
+			</env:messageVersion>
+		</env:UNG>
+		<env:interchangeMessage xmlns:c="urn:org.milyn.edi.unedifact:un:d03b:common" xmlns:paxlst="urn:org.milyn.edi.unedifact:un:d03b:paxlst">
+			<env:UNH>
+				<env:messageRefNum>PAXLST16</env:messageRefNum>
+				<env:messageIdentifier>
+					<env:id>PAXLST</env:id>
+					<env:versionNum>D</env:versionNum>
+					<env:releaseNum>03B</env:releaseNum>
+					<env:controllingAgencyCode>UN</env:controllingAgencyCode>
+				</env:messageIdentifier>
+			</env:UNH>
+			<paxlst:PAXLST>
+				<paxlst:Beginning_of_message>
+					<c:DOCUMENT_MESSAGE_NAME>
+						<c:Document_name_code>10</c:Document_name_code>
+					</c:DOCUMENT_MESSAGE_NAME>
+					<c:DOCUMENT_MESSAGE_IDENTIFICATION>
+						<c:Document_identifier>LOCKKH04103101</c:Document_identifier>
+					</c:DOCUMENT_MESSAGE_IDENTIFICATION>
+					<c:Message_function_code>4</c:Message_function_code>
+				</paxlst:Beginning_of_message>
+				<paxlst:Reference>
+					<c:REFERENCE>
+						<c:Reference_code_qualifier>RFA</c:Reference_code_qualifier>
+						<c:Reference_identifier>03</c:Reference_identifier>
+					</c:REFERENCE>
+				</paxlst:Reference>
+				<paxlst:Segment_group_2>
+					<paxlst:Transport_information>
+						<c:Transport_stage_code_qualifier>11</c:Transport_stage_code_qualifier>
+						<c:Means_of_transport_journey_identifier></c:Means_of_transport_journey_identifier>
+						<c:MODE_OF_TRANSPORT>
+						</c:MODE_OF_TRANSPORT>
+						<c:TRANSPORT_MEANS>
+						</c:TRANSPORT_MEANS>
+						<c:CARRIER>
+							<c:Carrier_identifier>LOCK</c:Carrier_identifier>
+							<c:Code_list_identification_code>172</c:Code_list_identification_code>
+						</c:CARRIER>
+					</paxlst:Transport_information>
+					<paxlst:Date_time_period>
+						<c:DATE_TIME_PERIOD>
+							<c:Date_or_time_or_period_function_code_qualifier>132</c:Date_or_time_or_period_function_code_qualifier>
+							<c:Date_or_time_or_period_text>20041230</c:Date_or_time_or_period_text>
+							<c:Date_or_time_or_period_format_code>102</c:Date_or_time_or_period_format_code>
+						</c:DATE_TIME_PERIOD>
+					</paxlst:Date_time_period>
+				</paxlst:Segment_group_2>
+				<paxlst:Segment_group_4>
+					<paxlst:Name_and_address>
+						<c:Party_function_code_qualifier>VW</c:Party_function_code_qualifier>
+						<c:PARTY_IDENTIFICATION_DETAILS>
+							<c:Party_identifier>0000041153</c:Party_identifier>
+							<c:Code_list_identification_code>109</c:Code_list_identification_code>
+						</c:PARTY_IDENTIFICATION_DETAILS>
+						<c:NAME_AND_ADDRESS>
+						</c:NAME_AND_ADDRESS>
+						<c:PARTY_NAME>
+							<c:Party_name_-_-1>AOMAD</c:Party_name_-_-1>
+							<c:Party_name_-_-2>CHRIS</c:Party_name_-_-2>
+							<c:Party_name_-_-3></c:Party_name_-_-3>
+							<c:Party_name_-_-4></c:Party_name_-_-4>
+							<c:Party_name_-_-5></c:Party_name_-_-5>
+							<c:Party_name_format_code>1</c:Party_name_format_code>
+						</c:PARTY_NAME>
+						<c:STREET>
+							<c:Street_and_number_or_post_office_box_identifier_-_-1>11107 SUNSET HILL'S ROAD</c:Street_and_number_or_post_office_box_identifier_-_-1>
+						</c:STREET>
+						<c:City_name>RESTON</c:City_name>
+						<c:COUNTRY_SUB_ENTITY_DETAILS>
+							<c:Country_sub_entity_name_code>VA</c:Country_sub_entity_name_code>
+							<c:Code_list_identification_code>163</c:Code_list_identification_code>
+							<c:Code_list_responsible_agency_code>5</c:Code_list_responsible_agency_code>
+						</c:COUNTRY_SUB_ENTITY_DETAILS>
+						<c:Postal_identification_code>20190</c:Postal_identification_code>
+					</paxlst:Name_and_address>
+					<paxlst:Attribute>
+						<c:Attribute_function_code_qualifier>2</c:Attribute_function_code_qualifier>
+						<c:ATTRIBUTE_TYPE>
+						</c:ATTRIBUTE_TYPE>
+						<c:ATTRIBUTE_DETAIL>
+							<c:Attribute_description_code>M*M*M*M*M</c:Attribute_description_code>
+						</c:ATTRIBUTE_DETAIL>
+					</paxlst:Attribute>
+					<paxlst:Date_time_period>
+						<c:DATE_TIME_PERIOD>
+							<c:Date_or_time_or_period_function_code_qualifier>329</c:Date_or_time_or_period_function_code_qualifier>
+							<c:Date_or_time_or_period_text>19350919</c:Date_or_time_or_period_text>
+							<c:Date_or_time_or_period_format_code>102</c:Date_or_time_or_period_format_code>
+						</c:DATE_TIME_PERIOD>
+					</paxlst:Date_time_period>
+					<paxlst:Employment_details>
+						<c:Employment_details_code_qualifier>4</c:Employment_details_code_qualifier>
+						<c:EMPLOYMENT_CATEGORY>
+						</c:EMPLOYMENT_CATEGORY>
+						<c:OCCUPATION>
+						</c:OCCUPATION>
+						<c:QUALIFICATION_CLASSIFICATION>
+							<c:Qualification_classification_description_code>1</c:Qualification_classification_description_code>
+						</c:QUALIFICATION_CLASSIFICATION>
+						<c:Job_title_description></c:Job_title_description>
+						<c:Qualification_application_area_code>8</c:Qualification_application_area_code>
+					</paxlst:Employment_details>
+					<paxlst:Nationality>
+						<c:Nationality_code_qualifier>2</c:Nationality_code_qualifier>
+						<c:NATIONALITY_DETAILS>
+							<c:Nationality_name_code>US</c:Nationality_name_code>
+							<c:Code_list_identification_code></c:Code_list_identification_code>
+							<c:Code_list_responsible_agency_code>5</c:Code_list_responsible_agency_code>
+						</c:NATIONALITY_DETAILS>
+					</paxlst:Nationality>
+					<paxlst:Segment_group_5>
+						<paxlst:Document_message_details>
+							<c:DOCUMENT_MESSAGE_NAME>
+								<c:Document_name_code>5K</c:Document_name_code>
+							</c:DOCUMENT_MESSAGE_NAME>
+							<c:DOCUMENT_MESSAGE_DETAILS>
+								<c:Document_identifier>P100971204141</c:Document_identifier>
+							</c:DOCUMENT_MESSAGE_DETAILS>
+						</paxlst:Document_message_details>
+						<paxlst:Place_location_identification>
+							<c:Location_function_code_qualifier>91</c:Location_function_code_qualifier>
+							<c:LOCATION_IDENTIFICATION>
+								<c:Location_name_code>VA</c:Location_name_code>
+								<c:Code_list_identification_code>163</c:Code_list_identification_code>
+							</c:LOCATION_IDENTIFICATION>
+						</paxlst:Place_location_identification>
+						<paxlst:Place_location_identification>
+							<c:Location_function_code_qualifier>91</c:Location_function_code_qualifier>
+							<c:LOCATION_IDENTIFICATION>
+								<c:Location_name_code>US</c:Location_name_code>
+								<c:Code_list_identification_code>162</c:Code_list_identification_code>
+							</c:LOCATION_IDENTIFICATION>
+						</paxlst:Place_location_identification>
+					</paxlst:Segment_group_5>
+					<paxlst:Segment_group_5>
+						<paxlst:Document_message_details>
+							<c:DOCUMENT_MESSAGE_NAME>
+								<c:Document_name_code>39</c:Document_name_code>
+							</c:DOCUMENT_MESSAGE_NAME>
+							<c:DOCUMENT_MESSAGE_DETAILS>
+								<c:Document_identifier>15504141</c:Document_identifier>
+							</c:DOCUMENT_MESSAGE_DETAILS>
+						</paxlst:Document_message_details>
+						<paxlst:Place_location_identification>
+							<c:Location_function_code_qualifier>91</c:Location_function_code_qualifier>
+							<c:LOCATION_IDENTIFICATION>
+								<c:Location_name_code>US</c:Location_name_code>
+								<c:Code_list_identification_code>162</c:Code_list_identification_code>
+							</c:LOCATION_IDENTIFICATION>
+						</paxlst:Place_location_identification>
+					</paxlst:Segment_group_5>
+				</paxlst:Segment_group_4>
+			</paxlst:PAXLST>
+			<env:UNT>
+				<env:segmentCount>16</env:segmentCount>
+				<env:messageRefNum>PAXLST16</env:messageRefNum>
+			</env:UNT>
+		</env:interchangeMessage>
+		<env:UNE>
+			<env:controlCount>1</env:controlCount>
+			<env:groupRef>16</env:groupRef>
+		</env:UNE>
+	</env:group>
+	<env:UNZ xmlns:env="urn:org.milyn.edi.unedifact.v41">
+		<env:controlCount>1</env:controlCount>
+		<env:controlRef>16</env:controlRef>
+	</env:UNZ>
+</env:unEdifact>
