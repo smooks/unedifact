@@ -1,0 +1,205 @@
+description='Smooks Unedifact project'
+
+group = 'org.milyn.edi.unedifact'
+version = '1.5-SNAPSHOT'
+osgiVersion = '1.5.0.SNAPSHOT'
+
+allprojects {
+
+	sourceCompatibility = org.gradle.api.JavaVersion.VERSION_1_5
+	targetCompatibility = org.gradle.api.JavaVersion.VERSION_1_5
+
+	repositories {
+        mavenLocal()
+        mavenCentral()
+        mavenRepo urls: ["http://repo1.maven.org"]
+        mavenRepo urls: ["http://repo1.maven.org/maven2"]
+        mavenRepo urls: ["http://repository.codehaus.org/"]
+ 		mavenRepo urls: ["http://snapshots.repository.codehaus.org"]
+ 		mavenRepo urls: ["http://www.jfrog.org/artifactory/plugins-releases"]
+        mavenRepo urls: ["http://repository.jboss.org/maven2/"]
+	}
+    
+	defaultTasks 'install'
+    buildDir = "${projectDir}/target"
+	libDir = projectDir
+	libsDir = 'target'
+}
+
+configure(subprojects) {
+	apply plugin: 'java'
+	apply plugin: 'maven'
+	apply plugin: 'osgi'
+
+    unedifactName = "${project.getProjectDir().getParentFile().getName()}"  
+    version = rootProject.version
+    group = rootProject.group
+
+    configurations {
+        deployerJars
+    }
+
+	dependencies {
+        compile "org.milyn:milyn-smooks-edi:$rootProject.version"
+        compile ("org.milyn:milyn-smooks-ejc:$rootProject.version") {
+            exclude group: 'org.eclipse.equinox', module: 'app'
+        }
+
+        compile ("org.milyn:milyn-smooks-ect:$rootProject.version") {
+            exclude group: 'org.eclipse.equinox', module: 'app'
+        }
+
+        testCompile "org.milyn:testres:$rootProject.version"
+        testCompile 'junit:junit:4.8'
+        testCompile 'log4j:log4j:1.2.14'
+        deployerJars "org.apache.maven.wagon:wagon-webdav-jackrabbit:1.0-beta-6"
+	}
+
+    if (rootProject.hasProperty('milynUser')) {
+        uploadArchives {
+            repositories.mavenDeployer {
+                name = 'davDeployer' 
+                configuration = configurations.deployerJars
+                repository(url: "dav:https://nexus.codehaus.org/service/local/staging/deploy/maven2/") {
+                    authentication(userName: milynUser, password: milynPassword)
+                    releases() 
+                    proxy() 
+                }
+                snapshotRepository(url: "dav:https://nexus.codehaus.org/content/repositories/snapshots/") {
+                    authentication(userName: milynUser, password: milynPassword)
+                    snapshots() 
+                    proxy() 
+                }
+                pom.whenConfigured { pom ->
+                    pom.dependencies.findAll {
+                        if (it.artifactId.contains('mapping')) {
+                            logger.info("setting ${mappingProject.getPath().substring(1)} to ${mappingProject.property('artifactId')}")
+                            it.artifactId = mappingProject.property('artifactId')
+                        }
+                    }
+                }
+            }
+        }   
+    }
+}
+
+configure (subprojects.findAll { project -> project.path.contains('mapping') }) {
+    artifactId = "${unedifactName}-mapping"
+    archivesBaseName = artifactId
+    unedifactSpecFile = "${unedifactName}.zip"
+    mavenUrn = "${group}:${artifactId}:${rootProject.version}"
+
+    sourceSets {
+        main.java.srcDir "${buildDir}/classes/main"
+        main.resources.srcDir "${buildDir}/classes/main"
+    }
+
+    task ('ect', dependsOn: 'classes')  {
+        description = "Takes a UNEDIFACT specification zip and generates a Smooks EDI Mapping Model bundle"
+        doLast {
+            ant.taskdef (name : 'antEct', classname: 'org.milyn.ect.ant.ECTUnEdifactAntTask', classpath: runtimeClasspath.asPath)
+            ant.antEct (unEdiFactZip: file(unedifactSpecFile), urn: mavenUrn, mappingModelFolder: file("${buildDir}/classes/main"))
+        }
+    }
+
+    jar {
+        dependsOn('ect')
+        manifest {
+            name = "Smooks $mavenUrn"
+            symbolicName = mavenUrn
+            vendor = 'Smooks'
+            classes = "${buildDir}/classes/main"
+            instruction 'Fragment-Host', "org.milyn.smooks.osgi;bundle-version=${rootProject.version}"
+            instruction 'Export-Package', rootProject.group.replaceAll('[.]', '_') + ".${artifactId}.${rootProject.version};version=${rootProject.version}"
+            instruction 'Export-Package', rootProject.group.replaceAll('[.]', '_') + ".${artifactId}.${rootProject.version};version=${rootProject.version}"
+            instruction 'Import-Package', rootProject.group.replaceAll('[.]', '_') + ".${artifactId}.${rootProject.version};version=${rootProject.version}"
+        }
+    }
+}
+
+configure (subprojects.findAll { project -> project.path.contains('binding') } ) {
+    artifactId = "${unedifactName}-binding"
+    archivesBaseName = "${unedifactName}-binding"
+    bindingModelName = "${rootProject.group}:${unedifactName}-binding"
+    mappingProject = project(":${unedifactName}/mapping")
+
+    dependencies {
+        compile project (mappingProject.getPath())
+    }
+
+    sourceSets {
+        main.java.srcDir "${buildDir}/ejc"
+        main.resources.srcDir "${buildDir}/ejc"
+    }
+
+    configure(install.repositories.mavenInstaller) {
+        pom.whenConfigured { pom ->
+            pom.dependencies.findAll {
+                if (it.artifactId == mappingProject.getPath().substring(1)) {
+                    it.artifactId = mappingProject.property('artifactId')
+                }
+            }
+        }
+    }
+
+    task ejc (dependsOn: [JavaPlugin.PROCESS_RESOURCES_TASK_NAME, "${mappingProject.path}:build"]) {
+        description = "Smooks EJC compiles "
+        doFirst {
+            ant.taskdef (name : 'ejc', classname: 'org.milyn.ejc.ant.EJCAntTask', classpath: runtimeClasspath.asPath)
+            mappingJar = mappingProject.file("${mappingProject.buildDir}/libs/${unedifactName}-mapping-${rootProject.version}.jar")
+            ant.ejc (ediMappingModel: mappingJar, destDir: file("${buildDir}/ejc"), packageName : "org.milyn.edi.unedifact.${unedifactName}")
+            project.copy {
+                from "${buildDir}/ejc"
+                into "${buildDir}/classes/main"
+                include '**/*.xml'
+            }
+        }
+    }
+
+    compileJava.dependsOn(ejc)
+    jar.dependsOn(ejc)
+    jar {
+        manifest {
+            name = "Smooks ${bindingModelName}"
+            symbolicName = "${bindingModelName}"
+            version = rootProject.version
+            vendor = 'Smooks'
+            classes = "${buildDir}/ejc"
+            instruction 'Fragment-Host', "org.milyn.smooks.osgi;bundle-version=${rootProject.version}"
+        }
+    }
+
+    install.dependsOn("${mappingProject.path}:install")
+}
+
+configure (subprojects.findAll { project -> project.path.contains('test') } ) {
+    bindingProject = project.findProject(":${unedifactName}/binding")
+    mappingProject = project(":${unedifactName}/mapping")
+
+    dependencies {
+        testCompile project (mappingProject.getPath())
+        if (bindingProject) {
+            testCompile project (bindingProject.getPath())
+            testCompile fileTree (dir: "${bindingProject.buildDir}/libs", include: '*.jar')
+        }
+        testCompile fileTree (dir: "${mappingProject.buildDir}/libs", include: '*.jar')
+    }
+
+    if (bindingProject) {
+        build.dependsOn("${bindingProject.path}:build")
+    }
+
+    sourceSets.test.resources.srcDir 'src/test/java'
+
+    jar {
+        enabled = false
+    }
+}
+
+
+task wrapper(type: Wrapper) {
+    group = 'Buildmaster'
+    description = "Generates gradlew and gradlew.bat bootstrap scripts"
+    gradleVersion = '0.9.2'
+    jarFile = 'wrapper/gradle-wrapper.jar'
+}

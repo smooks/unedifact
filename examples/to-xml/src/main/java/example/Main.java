@@ -42,7 +42,7 @@ public class Main {
         
         // Or, configure Smooks programmatically...
         Smooks smooks = new Smooks();
-        smooks.setReaderConfig(new UNEdifactReaderConfigurator("urn:org.milyn.edi.unedifact:d03b-mapping:1.0-SNAPSHOT"));
+        smooks.setReaderConfig(new UNEdifactReaderConfigurator("urn:org.milyn.edi.unedifact:d03b-mapping:*"));
 
         try {
             StringWriter writer = new StringWriter();
