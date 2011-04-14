@@ -23,6 +23,6 @@
     Reader configured with the a URN, which is based on the maven repo
     artifact group:name:version info...
     -->
-    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d03b-mapping:1.0" />
+    <unedifact:reader mappingModel="urn:org.milyn.edi.unedifact:d03b-mapping:*" />
 
 </smooks-resource-list>

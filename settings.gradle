@@ -1,0 +1,10 @@
+projectDir = rootProject.getProjectDir().getAbsolutePath()
+specsPattern = ~/[\w][\d][\d][\w]/
+
+new File(projectDir).eachFileMatch(specsPattern) { specDir ->
+    specDir.eachFileMatch(~/(mapping|binding|test)/) { subModule ->
+        moduleName = ":${specDir.getName()}/${subModule.getName()}"
+        include moduleName
+    }
+}
+
