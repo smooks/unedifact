@@ -10,6 +10,7 @@
 
     <properties>
         <smooks.version>1.5-SNAPSHOT</smooks.version> <!-- ## Smooks Version ## -->
+        <smooks.osgi.version>1.5.0.SNAPSHOT</smooks.osgi.version> <!-- ### Smooks version that is safe to use in OSGi container ## -->
 
         <!-- UN/EDIFACT versions... -->
         <d93a.version>${smooks.version}</d93a.version>
@@ -89,6 +90,7 @@
     </dependencies>
     
     <build>
+    	<finalName>${project.groupId}.${project.artifactId}_${smooks.osgi.version}</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -123,7 +125,8 @@
                 </executions>
                 <configuration>
                     <instructions>
-                        <Fragment-Host>org.milyn.smooks.osgi;bundle-version=${smooks.version}</Fragment-Host>
+                    	<Bundle-SymbolicName>$(maven-symbolicname);singleton:=true</Bundle-SymbolicName>
+                        <Fragment-Host>org.milyn.smooks.osgi;bundle-version=${smooks.osgi.version}</Fragment-Host>
                     </instructions>
                 </configuration>
             </plugin>
