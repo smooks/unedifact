@@ -11,7 +11,6 @@
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d96a-mapping</artifactId>
     <name>Smooks EDI - UN/EDIFACT - D96A - Mapping Model</name>
-    <version>${d96a.version}</version>
     <packaging>jar</packaging>
 
     <build>
@@ -19,7 +18,7 @@
             <plugin>
                 <groupId>org.milyn</groupId>
                 <artifactId>maven-ect-plugin</artifactId>
-		        <version>${smooks.version}</version> <!-- base pom version - do not remove this comment -->
+		        <version>${project.version}</version> <!-- base pom version - do not remove this comment -->
                 <configuration>
                     <src>d96a.zip</src>
                     <srcType>UNEDIFACT</srcType>

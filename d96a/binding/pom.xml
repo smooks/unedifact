@@ -11,14 +11,13 @@
     <name>Smooks EDI - UN/EDIFACT - D96A - Bindings</name>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d96a-binding</artifactId>
-    <version>${d96a.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d96a-mapping</artifactId>
-            <version>${d96a.version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -27,9 +26,9 @@
             <plugin>
                 <groupId>org.milyn</groupId>
                 <artifactId>maven-ejc-plugin</artifactId>
-                <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+                <version>${project.version}</version>
                 <configuration>
-                    <ediMappingFile>urn:org.milyn.edi.unedifact:d96a-mapping:${d96a.version}</ediMappingFile>
+                    <ediMappingFile>urn:org.milyn.edi.unedifact:d96a-mapping:${project.version}</ediMappingFile>
                 </configuration>
                 <executions>
                     <execution><goals><goal>generate</goal></goals></execution>
@@ -38,7 +37,7 @@
                     <dependency>
                         <groupId>org.milyn.edi.unedifact</groupId>
                         <artifactId>d96a-mapping</artifactId>
-                        <version>${d96a.version}</version>
+                        <version>${project.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

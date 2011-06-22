@@ -23,6 +23,7 @@
         <groupId>org.milyn</groupId>
         <artifactId>smooks-examples</artifactId>
         <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <name>Milyn Smooks Example - UN/EDIFACT - Camel Split/Route</name>
     <groupId>org.milyn</groupId>

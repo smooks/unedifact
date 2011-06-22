@@ -6,17 +6,17 @@
         <groupId>org.milyn.edi</groupId>
         <artifactId>unedifact-gen</artifactId>
         <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <name>Smooks EDI - UN/EDIFACT - D97B - Bindings</name>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d97b-binding</artifactId>
-    <version>${d97b.version}</version>
 
     <dependencies>
         <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d97b-mapping</artifactId>
-            <version>${d97b.version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -25,9 +25,9 @@
             <plugin>
                 <groupId>org.milyn</groupId>
                 <artifactId>maven-ejc-plugin</artifactId>
-                <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+                <version>${project.version}</version>
                 <configuration>
-                    <ediMappingFile>urn:org.milyn.edi.unedifact:d97b-mapping:${d97b.version}</ediMappingFile>
+                    <ediMappingFile>urn:org.milyn.edi.unedifact:d97b-mapping:${project.version}</ediMappingFile>
                 </configuration>
                 <executions>
                     <execution><goals><goal>generate</goal></goals></execution>
@@ -36,7 +36,7 @@
                     <dependency>
                         <groupId>org.milyn.edi.unedifact</groupId>
                         <artifactId>d97b-mapping</artifactId>
-                        <version>${d97b.version}</version>
+                        <version>${project.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

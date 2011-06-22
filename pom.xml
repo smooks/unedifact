@@ -2,6 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.codehaus</groupId>
+        <artifactId>codehaus-parent</artifactId>
+        <version>4</version>
+    </parent>
+
     <groupId>org.milyn.edi</groupId>
     <artifactId>unedifact-gen</artifactId>
     <packaging>pom</packaging>
@@ -82,69 +89,32 @@
     </modules>
 
     <properties>
-        <smooks.version>1.5-SNAPSHOT</smooks.version> <!-- ## Smooks Version ## -->
         <smooks.osgi.version>1.5.0.SNAPSHOT</smooks.osgi.version> <!-- ### Smooks version that is safe to use in OSGi container ## -->
-
-        <!-- UN/EDIFACT versions... -->
-        <d93a.version>${smooks.version}</d93a.version>
-        <d94a.version>${smooks.version}</d94a.version>
-        <d94b.version>${smooks.version}</d94b.version>
-        <d95a.version>${smooks.version}</d95a.version>
-        <d95b.version>${smooks.version}</d95b.version>
-        <d96a.version>${smooks.version}</d96a.version>
-        <d96b.version>${smooks.version}</d96b.version>
-        <d97a.version>${smooks.version}</d97a.version>
-        <d97b.version>${smooks.version}</d97b.version>
-        <d98a.version>${smooks.version}</d98a.version>
-        <d98b.version>${smooks.version}</d98b.version>
-        <d99a.version>${smooks.version}</d99a.version>
-        <d99b.version>${smooks.version}</d99b.version>
-        <d00a.version>${smooks.version}</d00a.version>
-        <d00b.version>${smooks.version}</d00b.version>
-        <d01a.version>${smooks.version}</d01a.version>
-        <d01b.version>${smooks.version}</d01b.version>
-        <d01c.version>${smooks.version}</d01c.version>
-        <d02a.version>${smooks.version}</d02a.version>
-        <d02b.version>${smooks.version}</d02b.version>
-        <d03a.version>${smooks.version}</d03a.version>
-        <d03b.version>${smooks.version}</d03b.version>
-        <d04a.version>${smooks.version}</d04a.version>
-        <d04b.version>${smooks.version}</d04b.version>
-        <d05a.version>${smooks.version}</d05a.version>
-        <d05b.version>${smooks.version}</d05b.version>
-        <d06a.version>${smooks.version}</d06a.version>
-        <d06b.version>${smooks.version}</d06b.version>
-        <d07a.version>${smooks.version}</d07a.version>
-        <d07b.version>${smooks.version}</d07b.version>
-        <d08a.version>${smooks.version}</d08a.version>
-        <d08b.version>${smooks.version}</d08b.version>
-        <d09a.version>${smooks.version}</d09a.version>
-        <d09b.version>${smooks.version}</d09b.version>
     </properties>
 
     <dependencies>
         <dependency>
 			<groupId>org.milyn</groupId>
 			<artifactId>milyn-smooks-edi</artifactId>
-			<version>${smooks.version}</version>
+			<version>${project.version}</version>
             <scope>provided</scope>
 		</dependency>
         <dependency>
             <groupId>org.milyn</groupId>
             <artifactId>milyn-smooks-ect</artifactId>
-            <version>${smooks.version}</version>
+            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.milyn</groupId>
             <artifactId>milyn-smooks-ejc</artifactId>
-            <version>${smooks.version}</version>
+            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.milyn</groupId>
             <artifactId>testres</artifactId>
-            <version>${smooks.version}</version>
+            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -227,22 +197,5 @@
             </testResource>
         </testResources>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>codehaus.maven.repo</id>
-            <name>Milyn Central Maven2 Repository</name>
-            <url>dav:https://dav.codehaus.org/repository/milyn/</url>
-        </repository>
-        <snapshotRepository>
-            <id>codehaus.maven.repo</id>
-            <name>Milyn Central Maven2 SNAPSHOT Repository</name>
-            <url>dav:https://dav.codehaus.org/snapshots.repository/milyn/</url>
-        </snapshotRepository>
-        <site>
-            <id>codehaus.maven.repo</id>
-            <url>dav:https://dav.codehaus.org/xfire/</url>
-        </site>
-    </distributionManagement>
 
 </project>

@@ -6,18 +6,18 @@
         <groupId>org.milyn.edi</groupId>
         <artifactId>unedifact-gen</artifactId>
         <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d09a-mapping</artifactId>
     <name>Smooks EDI - UN/EDIFACT - D09A - Mapping Model</name>
-    <version>${d09a.version}</version>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.milyn</groupId>
                 <artifactId>maven-ect-plugin</artifactId>
-		        <version>${smooks.version}</version> <!-- base pom version - do not remove this comment -->
+		        <version>${project.version}</version> <!-- base pom version - do not remove this comment -->
                 <configuration>
                     <src>d09a.zip</src>
                     <srcType>UNEDIFACT</srcType>
