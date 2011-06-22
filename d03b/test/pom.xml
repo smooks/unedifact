@@ -6,6 +6,7 @@
         <groupId>org.milyn.edi</groupId>
         <artifactId>unedifact-gen</artifactId>
         <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d03b-test</artifactId>
@@ -17,6 +18,12 @@
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d03b-binding</artifactId>
             <version>${d03b.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-edi-test</artifactId>
+            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

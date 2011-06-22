@@ -16,7 +16,7 @@
 
 package org_milyn_edi_unedifact.d03b.generated_tests;
 
-import org.milyn.ejc.util.InterchangeTestUtil;
+import org.milyn.edi.test.InterchangeTestUtil;
 import org_milyn_edi_unedifact.d03b.AbstractTestCase;
 
 import java.io.IOException;

@@ -31,8 +31,8 @@ public class InvoiceService {
     public void processInvoice(Invoic invoice) {
 
         System.out.println("================ Invoice Message ================");
-        System.out.println(new XStream().toXML(invoice.getBeginningOfMessage()));
-        System.out.println(new XStream().toXML(invoice.getDateTimePeriod()));
+        System.out.println(new XStream().toXML(invoice.getBGMBeginningOfMessage()));
+        System.out.println(new XStream().toXML(invoice.getDTMDateTimePeriod()));
 
     }
 }

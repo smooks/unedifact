@@ -25,13 +25,12 @@
     </parent>
     <name>Milyn Smooks Example - UN/EDIFACT - To XML</name>
     <artifactId>milyn-smooks-example-unedifact-to-xml</artifactId>
-    <version>1.0</version>
 
     <dependencies>
         <dependency>
             <groupId>org.milyn</groupId>
             <artifactId>milyn-smooks-edi</artifactId>
-            <version>${milyn.smooks.core.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>

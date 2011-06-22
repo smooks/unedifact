@@ -30,6 +30,7 @@ configure(subprojects) {
 	apply plugin: 'java'
 	apply plugin: 'maven'
 	apply plugin: 'osgi'
+    apply plugin: 'idea'
 
     unedifactName = "${project.getProjectDir().getParentFile().getName()}"  
     version = rootProject.version
@@ -49,7 +50,7 @@ configure(subprojects) {
             exclude group: 'org.eclipse.equinox', module: 'app'
         }
 
-        testCompile "org.milyn:testres:$rootProject.version"
+        testCompile "org.milyn:milyn-smooks-edi-test:$rootProject.version"
         testCompile 'junit:junit:4.8'
         testCompile 'log4j:log4j:1.2.14'
         deployerJars "org.apache.maven.wagon:wagon-webdav-jackrabbit:1.0-beta-6"

@@ -8,6 +8,79 @@
     <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
     <name>Milyn Smooks EDI Generation</name>
 
+    <modules>
+        <module>d00a/mapping</module>
+        <module>d00a/binding</module>
+        <module>d00b/mapping</module>
+        <module>d00b/binding</module>
+        <module>d01a/mapping</module>
+        <module>d01a/binding</module>
+        <module>d01b/mapping</module>
+        <module>d01b/binding</module>
+        <module>d01c/mapping</module>
+        <module>d01c/binding</module>
+        <module>d02a/mapping</module>
+        <module>d02a/binding</module>
+        <module>d02b/mapping</module>
+        <module>d02b/binding</module>
+        <module>d03a/mapping</module>
+        <module>d03a/binding</module>
+        <module>d03b/mapping</module>
+        <module>d03b/binding</module>
+        <module>d03b/test</module>
+        <module>d04a/mapping</module>
+        <module>d04a/binding</module>
+        <module>d04b/mapping</module>
+        <module>d04b/binding</module>
+        <module>d05a/mapping</module>
+        <module>d05a/binding</module>
+        <module>d05b/mapping</module>
+        <module>d05b/binding</module>
+        <module>d06a/mapping</module>
+        <module>d06a/binding</module>
+        <module>d06b/mapping</module>
+        <module>d06b/binding</module>
+        <module>d07a/mapping</module>
+        <module>d07a/binding</module>
+        <module>d07b/mapping</module>
+        <module>d07b/binding</module>
+        <module>d08a/mapping</module>
+        <!--<module>d08a/binding</module>-->
+        <module>d08a/test</module>
+        <module>d08b/mapping</module>
+        <module>d08b/binding</module>
+        <module>d09a/mapping</module>
+        <module>d09a/binding</module>
+        <module>d09b/mapping</module>
+        <module>d09b/binding</module>
+        <module>d93a/mapping</module>
+        <module>d93a/binding</module>
+        <module>d94a/mapping</module>
+        <module>d94a/binding</module>
+        <module>d94b/mapping</module>
+        <module>d94b/binding</module>
+        <module>d95a/mapping</module>
+        <module>d95a/binding</module>
+        <module>d95b/mapping</module>
+        <module>d95b/binding</module>
+        <module>d96a/mapping</module>
+        <module>d96a/binding</module>
+        <module>d96b/mapping</module>
+        <module>d96b/binding</module>
+        <module>d97a/mapping</module>
+        <module>d97a/binding</module>
+        <module>d97b/mapping</module>
+        <module>d97b/binding</module>
+        <module>d98a/mapping</module>
+        <module>d98a/binding</module>
+        <module>d98b/mapping</module>
+        <module>d98b/binding</module>
+        <module>d99a/mapping</module>
+        <module>d99a/binding</module>
+        <module>d99b/mapping</module>
+        <module>d99b/binding</module>
+    </modules>
+
     <properties>
         <smooks.version>1.5-SNAPSHOT</smooks.version> <!-- ## Smooks Version ## -->
         <smooks.osgi.version>1.5.0.SNAPSHOT</smooks.osgi.version> <!-- ### Smooks version that is safe to use in OSGi container ## -->

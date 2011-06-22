@@ -19,10 +19,10 @@ package org.smooks.example.processors;
 import com.thoughtworks.xstream.XStream;
 import org.milyn.edi.unedifact.d93a.ORDERS.Orders;
 import org.milyn.edi.unedifact.d93a.ORDRSP.Ordrsp;
-import org.milyn.edi.unedifact.d93a.common.BeginningOfMessage;
-import org.milyn.edi.unedifact.d93a.common.PaymentInstructions;
-import org.milyn.edi.unedifact.d93a.common.field.DocumentMessageNameC002;
-import org.milyn.edi.unedifact.d93a.common.field.PaymentInstructionDetailsC534;
+import org.milyn.edi.unedifact.d93a.common.BGMBeginningOfMessage;
+import org.milyn.edi.unedifact.d93a.common.PAIPaymentInstructions;
+import org.milyn.edi.unedifact.d93a.common.field.C002DocumentMessageName;
+import org.milyn.edi.unedifact.d93a.common.field.C534PaymentInstructionDetails;
 
 /**
  * Orders Processing Service.
@@ -34,22 +34,22 @@ public class OrdersService {
     public Ordrsp processOrder(Orders order) {
 
         System.out.println("================ Orders Message ================");
-        System.out.println(new XStream().toXML(order.getBeginningOfMessage()));
-        System.out.println(new XStream().toXML(order.getDateTimePeriod()));
+        System.out.println(new XStream().toXML(order.getBGMBeginningOfMessage()));
+        System.out.println(new XStream().toXML(order.getDTMDateTimePeriod()));
 
         // Now lets create a Purchase Order Response and return it...
         Ordrsp orderResponse = new Ordrsp();
 
-        orderResponse.setBeginningOfMessage(
-                new BeginningOfMessage().
-                        setDocumentMessageName(new DocumentMessageNameC002().setDocumentMessageName("ORDRSP")).
-                        setDocumentMessageNumber(order.getBeginningOfMessage().getDocumentMessageNumber())
+        orderResponse.setBGMBeginningOfMessage(
+                new BGMBeginningOfMessage().
+                        setC002DocumentMessageName(new C002DocumentMessageName().setE1000DocumentMessageName("ORDRSP")).
+                        setE1004DocumentMessageNumber(order.getBGMBeginningOfMessage().getE1004DocumentMessageNumber())
         );
-        orderResponse.setDateTimePeriod(order.getDateTimePeriod());
-        orderResponse.setPaymentInstructions(
-                new PaymentInstructions().
-                        setPaymentInstructionDetails(new PaymentInstructionDetailsC534().
-                                setPaymentChannelCoded("2")) // Automatic clearing house debit
+        orderResponse.setDTMDateTimePeriod(order.getDTMDateTimePeriod());
+        orderResponse.setPAIPaymentInstructions(
+                new PAIPaymentInstructions().
+                        setC534PaymentInstructionDetails(new C534PaymentInstructionDetails().
+                                setE4435PaymentChannelCoded("2")) // Automatic clearing house debit
         );
 
         return orderResponse;

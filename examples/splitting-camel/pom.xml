@@ -27,7 +27,6 @@
     <name>Milyn Smooks Example - UN/EDIFACT - Camel Split/Route</name>
     <groupId>org.milyn</groupId>
     <artifactId>milyn-smooks-example-unedifact-camel-split-route</artifactId>
-    <version>1.0</version>
 
     <properties>
         <!-- TODO: Ungrade camel.version to same version as camel cartridge -->
@@ -39,21 +38,26 @@
 
         <!-- The binding config for the D93A directory... -->
         <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-edi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d93a-binding</artifactId>
-            <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+            <version>${project.version}</version>
         </dependency>
 
         <!-- Routing dependencies ... -->
         <dependency>
             <groupId>org.milyn</groupId>
             <artifactId>milyn-smooks-camel</artifactId>
-            <version>${milyn.smooks.camel.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.milyn</groupId>
             <artifactId>milyn-smooks-routing</artifactId>
-            <version>${milyn.smooks.routing.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

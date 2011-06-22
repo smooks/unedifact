@@ -16,13 +16,12 @@
 
 package org_milyn_edi_unedifact.d03b.generated_tests;
 
+import org.milyn.edi.test.InterchangeTestUtil;
 import org.milyn.edi.unedifact.d03b.APERAK.Aperak;
 import org.milyn.edi.unedifact.d03b.AUTHOR.Author;
 import org.milyn.edi.unedifact.d03b.BALANC.Balanc;
 import org.milyn.edi.unedifact.d03b.BANSTA.Bansta;
-import org.milyn.edi.unedifact.d03b.D03BInterchangeFactory;
 import org.milyn.edi.unedifact.d03b.INVOIC.Invoic;
-import org.milyn.ejc.util.InterchangeTestUtil;
 import org.milyn.smooks.edi.unedifact.model.r41.UNEdifactInterchange41;
 import org.milyn.smooks.edi.unedifact.model.r41.UNEdifactMessage41;
 import org_milyn_edi_unedifact.d03b.AbstractTestCase;

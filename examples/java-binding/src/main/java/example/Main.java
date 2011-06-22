@@ -67,7 +67,7 @@ public class Main {
                     if (messageObj instanceof Invoic) {
                         Invoic invoice = (Invoic) messageObj;
 
-                        System.out.println("\tParty Name: " + invoice.getSegmentGroup2().get(0).getNameAndAddress().getPartyName().getPartyName1());
+                        System.out.println("\tParty Name: " + invoice.getSegmentGroup2().get(0).getNADNameAndAddress().getC080PartyName().getE30361PartyName());
                     }
                 }
             }

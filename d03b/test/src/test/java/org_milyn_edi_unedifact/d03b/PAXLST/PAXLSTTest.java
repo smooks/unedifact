@@ -1,6 +1,6 @@
 package org_milyn_edi_unedifact.d03b.PAXLST;
 
-import org.milyn.ejc.util.InterchangeTestUtil;
+import org.milyn.edi.test.InterchangeTestUtil;
 import org.xml.sax.SAXException;
 import org_milyn_edi_unedifact.d03b.AbstractTestCase;
 
