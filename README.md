@@ -1,6 +1,8 @@
 # Smooks UN/EDIFACT Artifact Sources
 - - -
 
+Here are some [slideshare slides about this project philosiphy][slideshare]
+
 ## Building
 
 ### Maven
@@ -82,3 +84,4 @@ Then run the deploy task:
 - - -
 
 [unece]: http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation-and-e-business-uncefact/outputs/standards/unedifact/directories/download.html "UNCE"
+[slideshare]: http://www.slideshare.net/tfennelly/unedifact-interchange-processing-with-smooks-v14-5104071 "EDI"
