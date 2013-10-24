@@ -13,8 +13,8 @@ you can build that without have to first build the binding/mapping projects.
 - - -
 
 ## Adding a new specification
-To do this need to create a directory named after the specification. Then create the mapping directory and put 
-the [specification](http://www.unece.org/trade/untdid/down_index.htm) zip file in the root of that directory. 
+Find your specification [on UNECE site][unece] then create a directory named after the specification (you can copy paste
+an older one) where you will download the desired zip.
 
 
 Run 'gradle projects' to see that you newly added project was added:
@@ -42,4 +42,5 @@ Then run the deploy task:
     > gradle uploadArchives
     
 - - -
-    
+
+[unece]: http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation-and-e-business-uncefact/outputs/standards/unedifact/directories/download.html "UNCE"
