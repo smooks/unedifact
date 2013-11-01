@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.milyn.edi</groupId>
         <artifactId>unedifact-gen-parent</artifactId>
-        <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <version>1.5.1</version> <!-- base pom version - do not remove this comment -->
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d96a-mapping</artifactId>
     <name>Smooks EDI - UN/EDIFACT - D96A - Mapping Model</name>
-    <packaging>jar</packaging>
+    <packaging>bundle</packaging>
 
     <build>
         <plugins>
