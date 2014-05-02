@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.milyn.edi</groupId>
-        <artifactId>unedifact-gen</artifactId>
-        <version>1.5-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
-        <relativePath>../../pom.xml</relativePath>
+        <artifactId>unedifact-gen-parent</artifactId>
+        <version>1.6-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     <name>Smooks EDI - UN/EDIFACT - D04B - Bindings</name>
     <groupId>org.milyn.edi.unedifact</groupId>
