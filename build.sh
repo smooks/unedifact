@@ -1,15 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
 DEPLOY="no"
-if [ $1 = "-deploy" ]; then
+if [ "$1" = "-deploy" ]; then
     echo "Deploying is turned ON!"
     DEPLOY="yes"
+    shift
 fi
 
-
-function exec_mvn {
+exec_mvn() {
     if [ -d $1 ]; then
         pushd $1
 
@@ -25,28 +25,17 @@ function exec_mvn {
     fi
 }
 
-function build_set {
-    pushd $1
+exec_mvn ./parent
 
-    exec_mvn mapping
-    exec_mvn binding
+if [ $# -eq 0 ]; then
+    set ./d*
+fi
 
-    if [ $DEPLOY = "no" ]; then
-        exec_mvn test
-    fi
-
-    popd
-}
-
-
-exec_mvn .
-
-for directory in ./*
+for directory;
 do
-    if [ -d $directory ]; then
-        build_set $directory
+    if [ -d "$directory" ]; then
+        exec_mvn $directory
     fi
 done
 
 DEPLOY="no"
-exec_mvn examples
