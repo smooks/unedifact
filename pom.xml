@@ -18,6 +18,19 @@
     <modules>
         <module>parent</module>
 
+        <module>d93a</module>
+        <module>d94a</module>
+        <module>d94b</module>
+        <module>d95a</module>
+        <module>d95b</module>
+        <module>d96a</module>
+        <module>d96b</module>
+        <module>d97a</module>
+        <module>d97b</module>
+        <module>d98a</module>
+        <module>d98b</module>
+        <module>d99a</module>
+        <module>d99b</module>
         <module>d00a</module>
         <module>d00b</module>
         <module>d01a</module>
@@ -39,27 +52,13 @@
         <module>d08b</module>
         <module>d09a</module>
         <module>d09b</module>
-        <module>d93a</module>
-        <module>d94a</module>
-        <module>d94b</module>
-        <module>d95a</module>
-        <module>d95b</module>
-        <module>d96a</module>
-        <module>d96b</module>
-        <module>d97a</module>
-        <module>d97b</module>
-        <module>d98a</module>
-        <module>d98b</module>
-        <module>d99a</module>
-        <module>d99b</module>
         <module>d10a</module>
         <module>d10b</module>
         <module>d11a</module>
         <module>d11b</module>
         <module>d12a</module>
         <module>d12b</module>
-        <module>d12a</module>
-        <module>d12b</module>
+        <module>d13a</module>
     </modules>
 
 </project>
