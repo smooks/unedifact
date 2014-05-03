@@ -15,10 +15,6 @@
     <version>1.6-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
     <name>Milyn Smooks EDI Generation Parent</name>
 
-    <properties>
-        <smooks.osgi.version>1.5.0.SNAPSHOT</smooks.osgi.version> <!-- ### Smooks version that is safe to use in OSGi container ## -->
-    </properties>
-
     <dependencies>
         <dependency>
 			<groupId>org.milyn</groupId>
@@ -79,6 +75,29 @@
                     </archive> 
                 </configuration>
             </plugin>  
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+
+                        <!-- More eclipse BullS workarounds: https://jira.codehaus.org/browse/MILYN-599 -->
+
+                        <id>regex-property</id>
+                        <goals>
+                            <goal>regex-property</goal>
+                        </goals>
+                        <configuration>
+                            <name>smooks.osgi.version</name>
+                            <value>${project.version}</value>
+                            <regex>-SNAPSHOT</regex>
+                            <replacement>.SNAPSHOT</replacement>
+                            <failIfNoMatch>false</failIfNoMatch>
+                        </configuration>
+                        </execution>
+                </executions>
+            </plugin>
             <plugin>   
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
