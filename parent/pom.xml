@@ -12,7 +12,7 @@
     <groupId>org.milyn.edi</groupId>
     <artifactId>unedifact-gen-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.6-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+    <version>1.5.1</version> <!-- base pom version - do not remove this comment -->
     <name>Milyn Smooks EDI Generation Parent</name>
 
     <dependencies>

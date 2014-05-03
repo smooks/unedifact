@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.milyn.edi</groupId>
         <artifactId>unedifact-gen-parent</artifactId>
-        <version>1.6-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+        <version>1.5.1</version> <!-- base pom version - do not remove this comment -->
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     <name>Smooks EDI - UN/EDIFACT - D98B - Bindings</name>
