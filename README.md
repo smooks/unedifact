@@ -1,5 +1,4 @@
 # Smooks UN/EDIFACT Artifact Sources
-- - -
 
 Here are some [slideshare slides about this project philosiphy][slideshare]
 
@@ -20,17 +19,19 @@ cd to root folder and :
 	cd ../d96a
 	mvn clean install
 
-- - -
+### build.sh and threaded.sh
 
-### Gradle
+To build all packages run `./build.sh` with no parameters.  To build a specific set of packages, supply the package names as a space separated list of parameters e.g. `./build.sh d00a d00b`.
 
-To build all specification run
+`./threaded.sh` performs the same action as `./build.sh`, but spins off multiple builds in parallel, greatly reducing the amount of time to build all packages.  You need to supply the script with a number indicating how many parallel builds it can run.  This number should be based on the number of cores the host has (max) e.g. if the host has 8 cores then something like `./threaded.sh -j 6` would probably work perfectly well i.e. 6 parallel package builds.
 
-    > gradle
-    
-You may also change directories to a specific specification and build from there. You can build from the binding directory
-directly and it will build the mapping project automatically. Likewise if the specification directory contains a test directory
-you can build that without have to first build the binding/mapping projects.
+### Docker
+
+You can also build from the [docker](https://www.docker.io) image:
+
+1. [Install docker](https://www.docker.io/gettingstarted/).
+2. Run `sudo docker build -t smooks-unedifact github.com/smooks/unedifact`.  This will create a docker image named "smooks-unedifact" that contains the correct build environment and a cloned copy of this git repo.
+3. Run `sudo docker run -i smooks-unedifact <command>` to execute the desired build (see above).
 
 - - -
 
