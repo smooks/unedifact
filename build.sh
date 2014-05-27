@@ -5,8 +5,9 @@ set -e
 ROOT_DIR=$PWD
 
 DEPLOY="no"
+STRTAT=""
 
-while getopts d:u:p:g: option
+while getopts d:u:p:g:s: option
 do
     case "${option}"
     in
@@ -14,6 +15,7 @@ do
         u) USERNM=${OPTARG};;
         p) PASSWD=${OPTARG};;
         g) GPGPPH=${OPTARG};;
+        s) STRTAT=${OPTARG};;
     esac
 done
 
@@ -26,6 +28,13 @@ fi
 
 exec_mvn() {
     if [ -d $1 ]; then
+        if [ "$STRTAT" != "" ] && [ "./$STRTAT" != "$1" ]; then
+            echo "Skipping $1"
+            return 0
+        fi
+
+        STRTAT=""
+
         pushd $1
 
         if [ $DEPLOY = "yes" ]; then
@@ -42,6 +51,7 @@ exec_mvn() {
 
 exec_mvn ./parent
 
+// Re-add directory list as a parameter
 set ./d*
 
 for directory;
