@@ -2,11 +2,24 @@
 
 set -e
 
-DEPLOY="no"
-if [ "$1" = "-deploy" ]; then
+ROOT_DIR=$PWD
+
+while getopts d:u:p:g: option
+do
+    case "${option}"
+    in
+        d) DEPLOY=${OPTARG};;
+        u) USERNM=${OPTARG};;
+        p) PASSWD=${OPTARG};;
+        g) GPGPPH=${OPTARG};;
+    esac
+done
+
+export CH_UN="$USERNM"
+export CH_PW="$PASSWD"
+
+if [ $DEPLOY = "yes" ]; then
     echo "Deploying is turned ON!"
-    DEPLOY="yes"
-    shift
 fi
 
 exec_mvn() {
@@ -15,7 +28,7 @@ exec_mvn() {
 
         if [ $DEPLOY = "yes" ]; then
             echo "Deploying $1"
-            mvn clean deploy
+            mvn clean deploy -Pdeploy -Dgpg.passphrase="$GPGPPH" -Dmaven.test.skip=true --settings $ROOT_DIR/settings_codehaus.xml
         else
             echo "Installing $1"
             mvn clean install
