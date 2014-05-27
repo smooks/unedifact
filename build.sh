@@ -4,6 +4,8 @@ set -e
 
 ROOT_DIR=$PWD
 
+DEPLOY="no"
+
 while getopts d:u:p:g: option
 do
     case "${option}"
@@ -40,9 +42,7 @@ exec_mvn() {
 
 exec_mvn ./parent
 
-if [ $# -eq 0 ]; then
-    set ./d*
-fi
+set ./d*
 
 for directory;
 do
