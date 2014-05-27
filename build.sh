@@ -51,7 +51,7 @@ exec_mvn() {
 
 exec_mvn ./parent
 
-// Re-add directory list as a parameter
+# Re-add directory list as a parameter
 set ./d*
 
 for directory;
