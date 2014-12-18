@@ -19,11 +19,28 @@ cd to root folder and :
 	cd ../d96a
 	mvn clean install
 
-### build.sh and threaded.sh
+### build.sh
 
-To build all packages run `./build.sh` with no parameters.  To build a specific set of packages, supply the package names as a space separated list of parameters e.g. `./build.sh d00a d00b`.
+To build all packages without deploying them to Nexus, simply run `./build.sh` with no parameters (equivalent to running `mvn clean install`).  To build a specific set of packages, supply the package names as a space separated list of parameters e.g. `./build.sh d00a d00b`.
 
-`./threaded.sh` performs the same action as `./build.sh`, but spins off multiple builds in parallel, greatly reducing the amount of time to build all packages.  You need to supply the script with a number indicating how many parallel builds it can run.  This number should be based on the number of cores the host has (max) e.g. if the host has 8 cores then something like `./threaded.sh -j 6` would probably work perfectly well i.e. 6 parallel package builds.
+To build all packages and deploy to the Codehaus Nexus repository ([read more here](https://github.com/smooks/smooks/blob/master/RELEASE.md)), supply the following parameters:
+
+* __-d__: Deploy to Nexus.
+* __-u__: Codehaus username (same as Xircles).
+* __-p__: Codehaus password (same as Xircles).
+* __-g__: GPG key passphrase. See [Smooks RELEASE.md](https://github.com/smooks/smooks/blob/master/RELEASE.md#generate-a-keypair-for-signing-artifacts).
+
+e.g.:
+
+```
+./build.sh -d yes -u tomfennelly -p "xxxxxxxxxxxx" -g "yyyyyyyyyyyyy"
+```
+
+### threaded.sh
+
+__Note that this script is very experimental. To have more predictable behavior, use the `./build.sh` script (see above).__
+
+`./threaded.sh` spins off multiple builds in parallel, greatly reducing the amount of time to build all packages.  You need to supply the script with a number indicating how many parallel builds it can run.  This number should be based on the number of cores the host has (max) e.g. if the host has 8 cores then something like `./threaded.sh -j 6` would probably work perfectly well i.e. 6 parallel package builds.
 
 ### Docker
 
