@@ -13,3 +13,5 @@ target
 .idea
 logs
 gradle.properties
+
+.gradle
