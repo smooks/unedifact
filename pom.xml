@@ -59,6 +59,14 @@
         <module>d12a</module>
         <module>d12b</module>
         <module>d13a</module>
+        <module>d13b</module>
+        <module>d14a</module>
+        <module>d14b</module>
+        <module>d15a</module>
+        <module>d15b</module>
+        <module>d16a</module>
+        <module>d16b</module>
+        <module>d17a</module>
     </modules>
 
 </project>
