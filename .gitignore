@@ -15,3 +15,4 @@ logs
 gradle.properties
 
 .gradle
+.DS_Store
