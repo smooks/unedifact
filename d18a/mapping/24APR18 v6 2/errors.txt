@@ -1,0 +1,4 @@
+Export log
+~~~~~~~~~~
+GEFEG.FX was unable to copy all facets of 'Main/qDT/UNCL/DateTime/Date Mandatory_ Date Time. Type/Date Time. Content/xs:simpleType' to 'Types/DateMandatoryDateTimeType'.
+Export completed.
