@@ -64,6 +64,7 @@
     <module>d09b</module>
     <module>d10a</module>
     <module>d10b</module>
+    <module>d11a</module>
   </modules>
 
   <dependencies>
