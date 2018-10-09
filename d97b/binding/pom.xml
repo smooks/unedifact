@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.milyn.edi</groupId>
     <artifactId>unedifact-d97b-aggregator</artifactId>
-    <version>1.4.1-SNAPSHOT</version> <!-- base pom version - do not remove this comment -->
+    <version>1.4.1</version>
   </parent>
   <name>Smooks EDI - UN/EDIFACT - D97B - Bindings</name>
   <groupId>org.milyn.edi.unedifact</groupId>

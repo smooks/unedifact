@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.milyn.edi</groupId>
     <artifactId>unedifact-parent</artifactId>
-    <version>1.4.1-SNAPSHOT</version>
+    <version>1.4.1</version>
   </parent>
 
   <artifactId>unedifact-d07a-aggregator</artifactId>
