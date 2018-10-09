@@ -5,11 +5,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.milyn.edi</groupId>
-    <artifactId>unedifact-d01a-aggregator</artifactId>
+    <groupId>org.milyn.edi.unedifact</groupId>
+    <artifactId>d01a-aggregator</artifactId>
     <version>1.4.1</version>
   </parent>
-  <groupId>org.milyn.edi.unedifact</groupId>
+
   <artifactId>d01a-mapping</artifactId>
   <name>Smooks EDI - UN/EDIFACT - D01A - Mapping Model</name>
 

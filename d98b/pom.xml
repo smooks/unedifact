@@ -7,11 +7,12 @@
 
   <parent>
     <groupId>org.milyn.edi</groupId>
-    <artifactId>unedifact-parent</artifactId>
+    <artifactId>unedifact-gen</artifactId>
     <version>1.4.1</version>
   </parent>
 
-  <artifactId>unedifact-d98b-aggregator</artifactId>
+  <groupId>org.milyn.edi.unedifact</groupId>
+  <artifactId>d98b-aggregator</artifactId>
   <packaging>pom</packaging>
   <name>Milyn Smooks D98B Agreggator</name>
 

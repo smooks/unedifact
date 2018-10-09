@@ -5,14 +5,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.milyn.edi</groupId>
-    <artifactId>unedifact-d96a-aggregator</artifactId>
+    <groupId>org.milyn.edi.unedifact</groupId>
+    <artifactId>d96a-aggregator</artifactId>
     <version>1.4.1</version>
   </parent>
-  <name>Smooks EDI - UN/EDIFACT - D96A - Bindings</name>
-  <groupId>org.milyn.edi.unedifact</groupId>
+
   <artifactId>d96a-binding</artifactId>
-  <packaging>jar</packaging>
+  <name>Smooks EDI - UN/EDIFACT - D96A - Bindings</name>
 
   <dependencies>
     <dependency>

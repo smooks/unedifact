@@ -11,7 +11,7 @@
   </parent>
 
   <groupId>org.milyn.edi</groupId>
-  <artifactId>unedifact-parent</artifactId>
+  <artifactId>unedifact-gen</artifactId>
   <packaging>pom</packaging>
   <version>1.4.1</version>
   <name>Milyn Smooks UN/EDIFACT EDI Bindings Generation</name>
@@ -255,6 +255,15 @@
       <id>deploy</id>
       <build>
         <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.10</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
