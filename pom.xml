@@ -255,6 +255,9 @@
       <id>deploy</id>
       <build>
         <plugins>
+          <!--
+            Skip running tests as part of the deployment process.
+          -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
@@ -264,6 +267,16 @@
             </configuration>
           </plugin>
 
+          <!--
+            Uploads Maven artifacts to the open-source Nexus repository
+            operated by Sonatype. Artifacts are uploaded to a staging area on
+            the Sonatype Nexus repository, where they need to be reviewed for
+            completeness and correctness through the Nexus web interface. Once
+            artifacts have been reviewed and found to be accurate, they can be
+            approved for deployment to Maven Central. Sonatype automatically
+            uploads approved artifacts to Maven Central (usually within a few
+            hours).
+          -->
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
