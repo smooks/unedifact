@@ -252,9 +252,74 @@
 
   <profiles>
     <profile>
-      <id>deploy</id>
+      <id>release</id>
       <build>
         <plugins>
+          <!--
+            Sign Maven artifacts. This is a mandatory requirement for publishing
+            Maven artifacts to Maven Central using the open-source Nexus
+            repository operated by Sonatype.
+
+            See details for the Nexus Staging plugin below.
+          -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.5</version>
+            <executions>
+              <execution>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+            Generate a JAR file containing Javadocs for the generated classes.
+            This is a mandatory requirement for publishing Maven artifacts to
+            Maven Central using the open-source Nexus repository operated by
+            Sonatype.
+
+            See details for the Nexus Staging plugin below.
+          -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.10.4</version>
+            <executions>
+              <execution>
+                <id>attach-javadoc</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+            Generate a JAR file containing source code for the generated
+            classes. This is a mandatory requirement for publishing Maven
+            artifacts to Maven Central using the open-source Nexus repository
+            operated by Sonatype.
+
+            See details for the Nexus Staging plugin below.
+          -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.2.1</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
           <!--
             Skip running tests as part of the deployment process.
           -->
