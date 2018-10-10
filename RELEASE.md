@@ -1,4 +1,4 @@
-# Smooks UN/EDIFACT Bindings
+# Smooks UN/EDIFACT Bindings Release Process
 
 This document describes the process to be followed by Smooks committers
 for publishing Maven artifacts generated from this repository to
