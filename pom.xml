@@ -92,6 +92,14 @@
       <version>${smooks.version}</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.xsd</groupId>
+      <artifactId>org.eclipse.xsd</artifactId>
+      <version>2.7.0-v20110606-0949</version>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -120,14 +128,30 @@
           <groupId>org.milyn</groupId>
           <artifactId>maven-ect-plugin</artifactId>
           <version>${smooks.version}</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
           <dependencies>
+            <!--
+              The following dependencies are required by the plugin. However,
+              the plugin POM contains versions for these dependencies that
+              are not available in Maven Central. Therefore, the dependency
+              versions are being overridden here to force the build process to
+              work.
+            -->
+            <dependency>
+              <groupId>org.eclipse.emf</groupId>
+              <artifactId>org.eclipse.emf.common</artifactId>
+              <version>2.6.0.v20100614-1136</version>
+            </dependency>
+            <dependency>
+              <groupId>org.eclipse.emf</groupId>
+              <artifactId>org.eclipse.emf.ecore</artifactId>
+              <version>2.7.0-v20110605-0747</version>
+            </dependency>
+            <dependency>
+              <groupId>org.eclipse.xsd</groupId>
+              <artifactId>org.eclipse.xsd</artifactId>
+              <version>2.7.0-v20110606-0949</version>
+            </dependency>
+
             <!--
               The following version of the dependency is the lowest available in
               Maven Central. Changing to a later version may cause build failures.
@@ -138,19 +162,19 @@
               <version>1.3.1</version>
             </dependency>
           </dependencies>
+          <executions>
+            <execution>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
 
         <plugin>
           <groupId>org.milyn</groupId>
           <artifactId>maven-ejc-plugin</artifactId>
           <version>${smooks.version}</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
           <dependencies>
             <!--
               The following version of the dependency is the lowest available in
@@ -162,6 +186,13 @@
               <version>1.3.1</version>
             </dependency>
           </dependencies>
+          <executions>
+            <execution>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
