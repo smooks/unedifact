@@ -18,6 +18,7 @@
       <groupId>org.milyn.edi.unedifact</groupId>
       <artifactId>d06b-mapping</artifactId>
       <version>${project.version}</version>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 

@@ -14,7 +14,7 @@
   <groupId>org.milyn.edi.unedifact</groupId>
   <artifactId>d03a-aggregator</artifactId>
   <packaging>pom</packaging>
-  <name>Milyn Smooks D03A Agreggator</name>
+  <name>Smooks EDI - UN/EDIFACT - D03A - Aggregator</name>
 
   <modules>
     <module>mapping</module>

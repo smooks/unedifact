@@ -14,7 +14,7 @@
   <groupId>org.milyn.edi.unedifact</groupId>
   <artifactId>d94b-aggregator</artifactId>
   <packaging>pom</packaging>
-  <name>Milyn Smooks D94B Agreggator</name>
+  <name>Smooks EDI - UN/EDIFACT - D94B - Aggregator</name>
 
   <modules>
     <module>mapping</module>

@@ -19,6 +19,7 @@
       <groupId>org.milyn.edi.unedifact</groupId>
       <artifactId>d97a-mapping</artifactId>
       <version>${project.version}</version>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 

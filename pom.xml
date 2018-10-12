@@ -14,7 +14,7 @@
   <artifactId>unedifact-gen</artifactId>
   <packaging>pom</packaging>
   <version>1.5</version>
-  <name>Milyn Smooks UN/EDIFACT EDI Bindings Generation</name>
+  <name>Smooks EDI - UN/EDIFACT - Bindings Generation</name>
   <description>
     Generates Java bindings for UN/EDIFACT messages.
   </description>
