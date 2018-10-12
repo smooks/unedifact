@@ -67,53 +67,54 @@
     <module>d11a</module>
   </modules>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.milyn</groupId>
-      <artifactId>milyn-smooks-edi</artifactId>
-      <version>${smooks.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.milyn</groupId>
-      <artifactId>milyn-smooks-ect</artifactId>
-      <version>${smooks.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.milyn</groupId>
-      <artifactId>milyn-smooks-ejc</artifactId>
-      <version>${smooks.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.milyn</groupId>
-      <artifactId>testres</artifactId>
-      <version>${smooks.version}</version>
-      <scope>test</scope>
-    </dependency>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.milyn</groupId>
+        <artifactId>milyn-smooks-edi</artifactId>
+        <version>${smooks.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.milyn</groupId>
+        <artifactId>milyn-smooks-ect</artifactId>
+        <version>${smooks.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.milyn</groupId>
+        <artifactId>milyn-smooks-ejc</artifactId>
+        <version>${smooks.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.milyn</groupId>
+        <artifactId>testres</artifactId>
+        <version>${smooks.version}</version>
+        <scope>test</scope>
+      </dependency>
 
-    <dependency>
-      <groupId>org.eclipse.xsd</groupId>
-      <artifactId>org.eclipse.xsd</artifactId>
-      <version>2.7.0-v20110606-0949</version>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+        <groupId>org.eclipse.xsd</groupId>
+        <artifactId>org.eclipse.xsd</artifactId>
+        <version>2.7.0-v20110606-0949</version>
+      </dependency>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.4</version>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.4</version>
+        <scope>test</scope>
+      </dependency>
 
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.14</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.14</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <pluginManagement>
