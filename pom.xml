@@ -13,7 +13,7 @@
   <groupId>org.milyn.edi</groupId>
   <artifactId>unedifact-gen</artifactId>
   <packaging>pom</packaging>
-  <version>1.4.2</version>
+  <version>1.5</version>
   <name>Milyn Smooks UN/EDIFACT EDI Bindings Generation</name>
   <description>
     Generates Java bindings for UN/EDIFACT messages.
@@ -24,7 +24,7 @@
     <maven.compiler.target>1.5</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <smooks.version>1.4.2</smooks.version>
+    <smooks.version>1.5</smooks.version>
   </properties>
 
   <modules>
