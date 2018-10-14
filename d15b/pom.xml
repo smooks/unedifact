@@ -12,11 +12,10 @@
 
     <artifactId>unedifact-d15b-aggregator</artifactId>
     <packaging>pom</packaging>
-    <name>Milyn Smooks D15b Agreggator</name>
+    <name>Milyn Smooks D15B Agreggator</name>
 
     <modules>
         <module>mapping</module>
         <module>binding</module>
     </modules>
-
 </project>
