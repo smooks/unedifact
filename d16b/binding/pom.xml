@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.milyn.edi</groupId>
+        <artifactId>unedifact-gen-parent</artifactId>
+	<version>1.6</version> <!-- base pom version - do not remove this comment -->
+        <relativePath>../../parent/pom.xml</relativePath>
+    </parent>
+    <name>Smooks EDI - UN/EDIFACT - D16B - Bindings</name>
+    <groupId>org.milyn.edi.unedifact</groupId>
+    <artifactId>d16b-binding</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.milyn.edi.unedifact</groupId>
+            <artifactId>d16b-mapping</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.milyn</groupId>
+                <artifactId>maven-ejc-plugin</artifactId>
+                <version>${project.version}</version>
+                <configuration>
+                    <ediMappingFile>urn:org.milyn.edi.unedifact:d16b-mapping:${project.version}</ediMappingFile>
+                </configuration>
+                <executions>
+                    <execution><goals><goal>generate</goal></goals></execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.milyn.edi.unedifact</groupId>
+                        <artifactId>d16b-mapping</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
