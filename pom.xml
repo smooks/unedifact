@@ -13,7 +13,7 @@
   <groupId>org.milyn.edi</groupId>
   <artifactId>unedifact-gen</artifactId>
   <packaging>pom</packaging>
-  <version>1.6</version>
+  <version>1.7.0</version>
   <name>Smooks EDI - UN/EDIFACT - Bindings Generation</name>
   <description>
     Generates Java bindings for UN/EDIFACT messages.
@@ -24,7 +24,7 @@
     <maven.compiler.target>1.5</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <smooks.version>1.6</smooks.version>
+    <smooks.version>1.7.0</smooks.version>
   </properties>
 
   <modules>
@@ -136,7 +136,13 @@
         <plugin>
           <groupId>org.milyn</groupId>
           <artifactId>maven-ect-plugin</artifactId>
-          <version>${smooks.version}</version>
+          <!--
+            The latest version of this plugin available in Maven Central is
+            1.7.0. That version has an incorrect configuration due to which
+            mapping files are not generated from EDIFACT specifications. For
+            this reason, the plugin version has been downgraded here.
+          -->
+          <version>1.6</version>
           <dependencies>
             <!--
               The following dependencies are required by the plugin. However,
@@ -195,6 +201,7 @@
               <goals>
                 <goal>generate</goal>
               </goals>
+              <phase>generate-sources</phase>
             </execution>
           </executions>
         </plugin>
@@ -202,7 +209,12 @@
         <plugin>
           <groupId>org.milyn</groupId>
           <artifactId>maven-ejc-plugin</artifactId>
-          <version>${smooks.version}</version>
+          <!--
+            The latest version of this plugin available in Maven Central is
+            1.7.0. A lower version is used here to maintain consistency with the
+            ECT plugin above.
+          -->
+          <version>1.6</version>
           <dependencies>
             <!--
               The following dependencies are required by the plugin. However,
