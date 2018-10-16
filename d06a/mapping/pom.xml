@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d06a-aggregator</artifactId>
-    <version>1.5.2</version>
+    <version>1.6</version>
   </parent>
 
   <artifactId>d06a-mapping</artifactId>

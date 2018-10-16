@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d94a-aggregator</artifactId>
-    <version>1.5.2</version>
+    <version>1.6</version>
   </parent>
 
   <artifactId>d94a-mapping</artifactId>
