@@ -65,6 +65,13 @@
     <module>d10a</module>
     <module>d10b</module>
     <module>d11a</module>
+    <module>d11b</module>
+    <module>d12a</module>
+    <module>d12b</module>
+    <module>d13a</module>
+    <module>d13b</module>
+    <module>d14a</module>
+    <module>d14b</module>
   </modules>
 
   <dependencyManagement>
