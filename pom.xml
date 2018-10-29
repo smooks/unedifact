@@ -13,7 +13,7 @@
   <groupId>org.milyn.edi</groupId>
   <artifactId>unedifact-gen</artifactId>
   <packaging>pom</packaging>
-  <version>1.7.0</version>
+  <version>1.7.1.0</version>
   <name>Smooks EDI - UN/EDIFACT - Bindings Generation</name>
   <description>
     Generates Java bindings for UN/EDIFACT messages.
@@ -24,7 +24,7 @@
     <maven.compiler.target>1.5</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <smooks.version>1.7.0</smooks.version>
+    <smooks.version>1.7.1</smooks.version>
   </properties>
 
   <modules>
@@ -138,67 +138,8 @@
 
         <plugin>
           <groupId>org.milyn</groupId>
-          <artifactId>maven-ect-plugin</artifactId>
-          <!--
-            The latest version of this plugin available in Maven Central is
-            1.7.0. That version has an incorrect configuration due to which
-            mapping files are not generated from EDIFACT specifications. For
-            this reason, the plugin version has been downgraded here.
-          -->
-          <version>1.6</version>
-          <dependencies>
-            <!--
-              The following dependencies are required by the plugin. However,
-              the plugin POM contains versions for these dependencies that
-              are not available in Maven Central. Therefore, the dependency
-              versions are being overridden here to force the build process to
-              work.
-            -->
-            <dependency>
-              <groupId>org.eclipse.emf</groupId>
-              <artifactId>org.eclipse.emf.common</artifactId>
-              <version>2.6.0.v20100614-1136</version>
-            </dependency>
-            <dependency>
-              <groupId>org.eclipse.emf</groupId>
-              <artifactId>org.eclipse.emf.ecore</artifactId>
-              <version>2.7.0-v20110605-0747</version>
-            </dependency>
-            <dependency>
-              <groupId>org.eclipse.xsd</groupId>
-              <artifactId>org.eclipse.xsd</artifactId>
-              <version>2.7.0-v20110606-0949</version>
-            </dependency>
-
-            <!--
-              The following version of the dependency is the lowest available in
-              Maven Central. Changing to a later version may cause build
-              failures.
-            -->
-            <dependency>
-              <groupId>org.jfrog.maven.annomojo</groupId>
-              <artifactId>maven-plugin-anno</artifactId>
-              <version>1.3.1</version>
-            </dependency>
-
-            <!--
-              The following dependency has been included because it has a
-              transitive dependency on the Eclipse XSD dependency, whose
-              specified version is not available in Maven Central, causing
-              build failures.
-            -->
-            <dependency>
-              <groupId>org.milyn</groupId>
-              <artifactId>milyn-smooks-ect</artifactId>
-              <version>${smooks.version}</version>
-              <exclusions>
-                <exclusion>
-                  <groupId>org.eclipse.xsd</groupId>
-                  <artifactId>org.eclipse.xsd</artifactId>
-                </exclusion>
-              </exclusions>
-            </dependency>
-          </dependencies>
+          <artifactId>ect-maven-plugin</artifactId>
+          <version>${smooks.version}</version>
           <executions>
             <execution>
               <goals>
@@ -211,61 +152,14 @@
 
         <plugin>
           <groupId>org.milyn</groupId>
-          <artifactId>maven-ejc-plugin</artifactId>
-          <!--
-            The latest version of this plugin available in Maven Central is
-            1.7.0. A lower version is used here to maintain consistency with the
-            ECT plugin above.
-          -->
-          <version>1.6</version>
-          <dependencies>
-            <!--
-              The following dependencies are required by the plugin. However,
-              the plugin POM contains versions for these dependencies that
-              are not available in Maven Central. Therefore, the dependency
-              versions are being overridden here to force the build process to
-              work.
-            -->
-            <dependency>
-              <groupId>org.eclipse.xsd</groupId>
-              <artifactId>org.eclipse.xsd</artifactId>
-              <version>2.7.0-v20110606-0949</version>
-            </dependency>
-
-            <!--
-              The following version of the dependency is the lowest available in
-              Maven Central. Changing to a later version may cause build
-              failures.
-            -->
-            <dependency>
-              <groupId>org.jfrog.maven.annomojo</groupId>
-              <artifactId>maven-plugin-anno</artifactId>
-              <version>1.3.1</version>
-            </dependency>
-
-            <!--
-              The following dependency has been included because it has a
-              transitive dependency on the Eclipse XSD dependency, whose
-              specified version is not available in Maven Central, causing
-              build failures.
-            -->
-            <dependency>
-              <groupId>org.milyn</groupId>
-              <artifactId>milyn-smooks-ejc</artifactId>
-              <version>${smooks.version}</version>
-              <exclusions>
-                <exclusion>
-                  <groupId>org.eclipse.xsd</groupId>
-                  <artifactId>org.eclipse.xsd</artifactId>
-                </exclusion>
-              </exclusions>
-            </dependency>
-          </dependencies>
+          <artifactId>ejc-maven-plugin</artifactId>
+          <version>${smooks.version}</version>
           <executions>
             <execution>
               <goals>
                 <goal>generate</goal>
               </goals>
+              <phase>generate-sources</phase>
             </execution>
           </executions>
         </plugin>
@@ -461,30 +355,4 @@
       </build>
     </profile>
   </profiles>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jfrog-plugins</id>
-      <url>http://repo.jfrog.org/artifactory/plugins-releases</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
-
-  <repositories>
-    <repository>
-      <id>smooks</id>
-      <url>http://smooks.org/maven2/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 </project>

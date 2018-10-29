@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d96b-aggregator</artifactId>
-    <version>1.7.0</version>
+    <version>1.7.1.0</version>
   </parent>
 
   <artifactId>d96b-mapping</artifactId>
@@ -17,7 +17,7 @@
     <plugins>
       <plugin>
         <groupId>org.milyn</groupId>
-        <artifactId>maven-ect-plugin</artifactId>
+        <artifactId>ect-maven-plugin</artifactId>
         <configuration>
           <src>d96b.zip</src>
           <srcType>UNEDIFACT</srcType>

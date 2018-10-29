@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d03b-aggregator</artifactId>
-    <version>1.7.0</version>
+    <version>1.7.1.0</version>
   </parent>
 
   <artifactId>d03b-binding</artifactId>
@@ -26,7 +26,7 @@
     <plugins>
       <plugin>
         <groupId>org.milyn</groupId>
-        <artifactId>maven-ejc-plugin</artifactId>
+        <artifactId>ejc-maven-plugin</artifactId>
         <configuration>
           <ediMappingFile>urn:org.milyn.edi.unedifact:d03b-mapping:${project.version}</ediMappingFile>
         </configuration>

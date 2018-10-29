@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.milyn.edi.unedifact</groupId>
     <artifactId>d12a-aggregator</artifactId>
-    <version>1.7.0</version>
+    <version>1.7.1.0</version>
   </parent>
 
   <artifactId>d12a-mapping</artifactId>
@@ -25,7 +25,7 @@
     <plugins>
       <plugin>
         <groupId>org.milyn</groupId>
-        <artifactId>maven-ect-plugin</artifactId>
+        <artifactId>ect-maven-plugin</artifactId>
         <configuration>
           <src>d12a.zip</src>
           <srcType>UNEDIFACT</srcType>
