@@ -75,6 +75,10 @@
     <module>d15a</module>
     <module>d15b</module>
     <module>d16a</module>
+    <module>d16b</module>
+    <module>d17a</module>
+    <module>d17b</module>
+    <module>d18a</module>
   </modules>
 
   <dependencyManagement>
