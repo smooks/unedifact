@@ -37,7 +37,23 @@ To build all packages and deploy to the Nexus repository (Maven Central)
 
 - - -
 
+## Release strategy
+
+A new version of this project is published to Maven Central along with
+every new version of
+[Smooks Core](https://www.github.com/smooks/smooks). This version has
+the same version number as the Smooks Core version number, suffixed with
+`.0`. For example, when Smooks Core version `1.7.1` was released, a
+corresponding version `1.7.1.0` of this project was also released.
+Releases made alongside Smooks Core releases contain all EDIFACT
+releases available up to that point.
+
+Additional releases made in between Smooks Core releases due to
+addition of new EDIFACT releases increment the most minor version
+number in sequential order (`n.n.n.1`, `n.n.n.2`, `n.n.n.3`, and so on).
+
 ## Adding a new UN/EDIFACT specification
+
 Find your specification on the [UNECE site][unece] then create a
 directory named after the specification (you can copy-paste an older
 one) where you will download the ZIP file for the desired specification.
