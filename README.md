@@ -2,6 +2,10 @@
 
 Here are some slides about the [philosophy behind this project][slideshare].
 
+> __THIS PROJECT IS NO LONGER UNDER ACTIVE DEVELOPMENT__.
+
+> Please contact the [Mailing list](http://www.smooks.org/community) if you wish to adopt the project and continue it's evolution.
+
 ## Building
 
 ### Pre-requisites
